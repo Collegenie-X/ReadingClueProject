@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor AI 모델 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: #2a2a3e;
+    --accent1: #7c6af7;
+    --accent2: #f7a06a;
+    --accent3: #6af7c8;
+    --accent4: #f76a9a;
+    --text: #e8e8f0;
+    --text-dim: #8888aa;
+    --claude: #d4a574;
+    --openai: #74b8d4;
+    --google: #74d48a;
+    --cursor: #b474d4;
+    --xai: #d47474;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 60px 40px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(124,106,247,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent1);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent1) 60%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent1);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Provider cards ── */
+  .provider-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .provider-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .provider-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .provider-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .provider-card.anthropic::before { background: var(--claude); }
+  .provider-card.openai::before { background: var(--openai); }
+  .provider-card.google::before { background: var(--google); }
+  .provider-card.cursor-ai::before { background: var(--cursor); }
+  .provider-card.xai::before { background: var(--xai); }
+
+  .provider-card:hover.anthropic { border-color: var(--claude); }
+  .provider-card:hover.openai { border-color: var(--openai); }
+  .provider-card:hover.google { border-color: var(--google); }
+  .provider-card:hover.cursor-ai { border-color: var(--cursor); }
+  .provider-card:hover.xai { border-color: var(--xai); }
+
+  .provider-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 8px;
+  }
+
+  .anthropic .provider-name { color: var(--claude); }
+  .openai .provider-name { color: var(--openai); }
+  .google .provider-name { color: var(--google); }
+  .cursor-ai .provider-name { color: var(--cursor); }
+  .xai .provider-name { color: var(--xai); }
+
+  .provider-models {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .provider-models span {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+  }
+
+  .provider-strength {
+    font-size: 12px;
+    color: var(--text);
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    line-height: 1.6;
+  }
+
+  /* ── Main comparison table ── */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead tr {
+    background: var(--surface2);
+  }
+
+  th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 14px 20px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(42,42,62,0.5);
+    vertical-align: middle;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr:hover td { background: rgba(124,106,247,0.04); }
+
+  .model-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-claude { background: rgba(212,165,116,0.15); color: var(--claude); }
+  .badge-openai { background: rgba(116,184,212,0.15); color: var(--openai); }
+  .badge-google { background: rgba(116,212,138,0.15); color: var(--google); }
+  .badge-cursor { background: rgba(180,116,212,0.15); color: var(--cursor); }
+  .badge-xai { background: rgba(212,116,116,0.15); color: var(--xai); }
+
+  .price-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent3);
+  }
+
+  .price-high { color: var(--accent4); }
+  .price-mid { color: var(--accent2); }
+  .price-low { color: var(--accent3); }
+
+  .ctx-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .cap-icons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .cap {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .cap.agent { background: rgba(124,106,247,0.2); color: var(--accent1); }
+  .cap.think { background: rgba(247,160,106,0.2); color: var(--accent2); }
+  .cap.img { background: rgba(106,247,200,0.2); color: var(--accent3); }
+
+  /* ── Use case flow ── */
+  .usecase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .usecase-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+  }
+
+  .usecase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .usecase-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+
+  .usecase-icon.plan { background: rgba(124,106,247,0.2); }
+  .usecase-icon.code { background: rgba(106,247,200,0.2); }
+
+  .usecase-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .usecase-sub {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .flow-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--surface2);
+    border-radius: 10px;
+    border-left: 3px solid transparent;
+  }
+
+  .flow-item.primary { border-left-color: var(--accent1); }
+  .flow-item.secondary { border-left-color: var(--accent2); }
+  .flow-item.tertiary { border-left-color: var(--accent3); }
+
+  .flow-step {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .flow-content { flex: 1; }
+
+  .flow-model {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+
+  .flow-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* ── Decision matrix ── */
+  .matrix {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 60px;
+  }
+
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .matrix-cell {
+    background: var(--surface2);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+
+  .matrix-cell:hover { border-color: var(--accent1); }
+
+  .matrix-scenario {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .matrix-recommend {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .matrix-reason {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ── Pricing tier ── */
+  .pricing-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .pricing-tier {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .tier-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 12px;
+  }
+
+  .tier-label.budget { color: var(--accent3); }
+  .tier-label.balanced { color: var(--accent2); }
+  .tier-label.premium { color: var(--accent4); }
+
+  .tier-models {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .tier-price {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 12px 0;
+  }
+
+  .tier-price.budget { color: var(--accent3); }
+  .tier-price.balanced { color: var(--accent2); }
+  .tier-price.premium { color: var(--accent4); }
+
+  /* ── Tip box ── */
+  .tip-box {
+    background: linear-gradient(135deg, rgba(124,106,247,0.1), rgba(247,160,106,0.05));
+    border: 1px solid rgba(124,106,247,0.3);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 40px;
+  }
+
+  .tip-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent1);
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .tip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tip-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .tip-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent1);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .tip-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  .tip-text strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .provider-card, .usecase-card, .matrix-cell {
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .provider-card:nth-child(1) { animation-delay: 0.05s; }
+  .provider-card:nth-child(2) { animation-delay: 0.1s; }
+  .provider-card:nth-child(3) { animation-delay: 0.15s; }
+  .provider-card:nth-child(4) { animation-delay: 0.2s; }
+  .provider-card:nth-child(5) { animation-delay: 0.25s; }
+
+  .star { color: var(--accent2); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Cursor IDE · AI Model Reference · 2026</div>
+  <div class="hero-title">Cursor 지원 AI 모델<br>완전 가이드</div>
+  <div class="hero-sub">기획 · 코딩 작업별 최적 모델 선택 전략</div>
+</div>
+
+<div class="container">
+
+  <!-- ── 1. Provider Overview ── -->
+  <div class="section-title">01 · 제공사별 모델 개요</div>
+  <div class="provider-grid">
+
+    <div class="provider-card anthropic">
+      <div class="provider-name">Anthropic</div>
+      <div class="provider-models">
+        <span>Claude 4.6 Opus ★</span>
+        <span>Claude 4.6 Sonnet ★</span>
+        <span>Claude 4.5 Opus/Sonnet</span>
+        <span>Claude 4.5 Haiku</span>
+        <span>Claude 4 Sonnet</span>
+      </div>
+      <div class="provider-strength">
+        📝 <strong>긴 문서 이해 · 논리적 글쓰기</strong><br>
+        코드 설명, 기획 문서, 복잡한 리팩토링에 탁월. 200k~1M 컨텍스트.
+      </div>
+    </div>
+
+    <div class="provider-card openai">
+      <div class="provider-name">OpenAI</div>
+      <div class="provider-models">
+        <span>GPT-5.4 ★</span>
+        <span>GPT-5.3 Codex ★</span>
+        <span>GPT-5.2 / GPT-5</span>
+        <span>GPT-5 Mini / Nano</span>
+        <span>GPT-5.1 Codex Mini</span>
+      </div>
+      <div class="provider-strength">
+        ⚡ <strong>코딩 특화 · 에이전트</strong><br>
+        Codex 계열은 코드 생성/수정에 최적화. 272k 컨텍스트. 캐시 90% 할인.
+      </div>
+    </div>
+
+    <div class="provider-card google">
+      <div class="provider-name">Google</div>
+      <div class="provider-models">
+        <span>Gemini 3.1 Pro ★</span>
+        <span>Gemini 3 Pro</span>
+        <span>Gemini 3 Flash ★</span>
+        <span>Gemini 2.5 Flash</span>
+        <span>Gemini 3 Pro Image</span>
+      </div>
+      <div class="provider-strength">
+        🖼️ <strong>멀티모달 · 빠른 응답</strong><br>
+        이미지 분석, UI 목업 검토. Flash는 빠르고 저렴. 최대 1M 컨텍스트.
+      </div>
+    </div>
+
+    <div class="provider-card cursor-ai">
+      <div class="provider-name">Cursor</div>
+      <div class="provider-models">
+        <span>Composer 1.5 ★</span>
+        <span>Composer 1</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+      </div>
+      <div class="provider-strength">
+        🎯 <strong>Cursor 전용 최적화</strong><br>
+        IDE 통합에 최적화된 자체 모델. Thinking 지원. 균형 잡힌 가격.
+      </div>
+    </div>
+
+    <div class="provider-card xai">
+      <div class="provider-name">xAI / Moonshot</div>
+      <div class="provider-models">
+        <span>Grok Code ★</span>
+        <span>Kimi K2.5</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+      </div>
+      <div class="provider-strength">
+        💰 <strong>최저가 · 실험적</strong><br>
+        Grok Code는 $0.2/1M 입력으로 최저가. 간단한 작업에 비용 효율적.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── 2. 상세 비교표 ── -->
+  <div class="section-title">02 · 주요 모델 상세 비교표</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>모델명</th>
+          <th>제공사</th>
+          <th>컨텍스트</th>
+          <th>입력 가격<br><span style="font-size:9px;opacity:0.6">/1M tokens</span></th>
+          <th>출력 가격<br><span style="font-size:9px;opacity:0.6">/1M tokens</span></th>
+          <th>기능</th>
+          <th>특징 요약</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="model-name">Claude 4.6 Opus</span> <span class="star">★</span></td>
+          <td><span class="badge badge-claude">Anthropic</span></td>
+          <td><span class="ctx-tag">200k → 1M</span></td>
+          <td><span class="price-tag price-mid">$5</span></td>
+          <td><span class="price-tag price-high">$25</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">최고 지능. 복잡한 기획·아키텍처 설계</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">Claude 4.6 Sonnet</span> <span class="star">★</span></td>
+          <td><span class="badge badge-claude">Anthropic</span></td>
+          <td><span class="ctx-tag">200k → 1M</span></td>
+          <td><span class="price-tag price-mid">$3</span></td>
+          <td><span class="price-tag price-mid">$15</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">성능·비용 균형 최고. <strong>일상 기본 모델</strong></td>
+        </tr>
+        <tr>
+          <td><span class="model-name">Claude 4.5 Haiku</span></td>
+          <td><span class="badge badge-claude">Anthropic</span></td>
+          <td><span class="ctx-tag">200k</span></td>
+          <td><span class="price-tag price-low">$1</span></td>
+          <td><span class="price-tag price-low">$5</span></td>
+          <td><div class="cap-icons"><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">빠르고 저렴. 간단한 질문·수정</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">GPT-5.4</span> <span class="star">★</span></td>
+          <td><span class="badge badge-openai">OpenAI</span></td>
+          <td><span class="ctx-tag">272k → 1M</span></td>
+          <td><span class="price-tag price-mid">$2.5</span></td>
+          <td><span class="price-tag price-mid">$15</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">캐시 90% 할인. 반복 코드 작업 효율</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">GPT-5.3 Codex</span> <span class="star">★</span></td>
+          <td><span class="badge badge-openai">OpenAI</span></td>
+          <td><span class="ctx-tag">272k</span></td>
+          <td><span class="price-tag price-mid">$1.75</span></td>
+          <td><span class="price-tag price-mid">$14</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">코드 생성 특화. 에이전트 작업 최적</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">GPT-5.1 Codex Mini</span></td>
+          <td><span class="badge badge-openai">OpenAI</span></td>
+          <td><span class="ctx-tag">272k</span></td>
+          <td><span class="price-tag price-low">$0.25</span></td>
+          <td><span class="price-tag price-low">$2</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">4x 속도 제한. 대량 반복 작업</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">Gemini 3.1 Pro</span> <span class="star">★</span></td>
+          <td><span class="badge badge-google">Google</span></td>
+          <td><span class="ctx-tag">200k → 1M</span></td>
+          <td><span class="price-tag price-mid">$2</span></td>
+          <td><span class="price-tag price-mid">$12</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">멀티모달 강점. UI/UX 이미지 분석</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">Gemini 3 Flash</span></td>
+          <td><span class="badge badge-google">Google</span></td>
+          <td><span class="ctx-tag">200k → 1M</span></td>
+          <td><span class="price-tag price-low">$0.5</span></td>
+          <td><span class="price-tag price-low">$3</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">빠른 응답. 초안 작성·간단 코드</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">Composer 1.5</span> <span class="star">★</span></td>
+          <td><span class="badge badge-cursor">Cursor</span></td>
+          <td><span class="ctx-tag">200k</span></td>
+          <td><span class="price-tag price-mid">$3.5</span></td>
+          <td><span class="price-tag price-mid">$17.5</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span><span class="cap img">Image</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">Cursor IDE 최적화. 기본 노출 모델</td>
+        </tr>
+        <tr>
+          <td><span class="model-name">Grok Code</span></td>
+          <td><span class="badge badge-xai">xAI</span></td>
+          <td><span class="ctx-tag">256k</span></td>
+          <td><span class="price-tag price-low">$0.2</span></td>
+          <td><span class="price-tag price-low">$1.5</span></td>
+          <td><div class="cap-icons"><span class="cap agent">Agent</span><span class="cap think">Think</span></div></td>
+          <td style="font-size:12px;color:var(--text-dim)">최저가. 간단한 코드 수정·탐색</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 3. 기획 vs 코딩 플로우 ── -->
+  <div class="section-title">03 · 기획 · 코딩 작업별 추천 플로우</div>
+  <div class="usecase-grid">
+
+    <div class="usecase-card">
+      <div class="usecase-header">
+        <div class="usecase-icon plan">📋</div>
+        <div>
+          <div class="usecase-title">기획 작업 플로우</div>
+          <div class="usecase-sub">요구사항 분석 · 문서화 · 아키텍처 설계</div>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-item primary">
+          <div class="flow-step">01</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--claude)">Claude 4.6 Opus (Thinking)</div>
+            <div class="flow-desc">복잡한 요구사항 분석, 시스템 아키텍처 설계, 기술 스펙 문서 작성. 긴 문서를 한번에 처리.</div>
+          </div>
+        </div>
+        <div class="flow-item secondary">
+          <div class="flow-step">02</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--claude)">Claude 4.6 Sonnet</div>
+            <div class="flow-desc">PRD 초안, 유저 스토리, 기능 명세서 작성. 일상적인 기획 문서에 최적의 가성비.</div>
+          </div>
+        </div>
+        <div class="flow-item tertiary">
+          <div class="flow-step">03</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--google)">Gemini 3.1 Pro</div>
+            <div class="flow-desc">UI 목업 이미지 분석, 경쟁사 스크린샷 비교, 와이어프레임 검토. 이미지 첨부 기획에 활용.</div>
+          </div>
+        </div>
+        <div class="flow-item" style="border-left-color:var(--text-dim)">
+          <div class="flow-step">빠른</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--google)">Gemini 3 Flash</div>
+            <div class="flow-desc">간단한 아이디어 브레인스토밍, 빠른 초안 피드백, 짧은 문서 수정.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="usecase-card">
+      <div class="usecase-header">
+        <div class="usecase-icon code">💻</div>
+        <div>
+          <div class="usecase-title">코딩 작업 플로우</div>
+          <div class="usecase-sub">구현 · 디버깅 · 리팩토링 · 자동화</div>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-item primary">
+          <div class="flow-step">01</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--openai)">GPT-5.3 Codex (Agent)</div>
+            <div class="flow-desc">대규모 코드 생성, 멀티파일 리팩토링, 복잡한 알고리즘 구현. Codex 계열 코딩 특화.</div>
+          </div>
+        </div>
+        <div class="flow-item secondary">
+          <div class="flow-step">02</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--claude)">Claude 4.6 Sonnet (Agent)</div>
+            <div class="flow-desc">코드 리뷰, 버그 분석, 테스트 작성, 문서화. 코드 설명과 이해에 탁월.</div>
+          </div>
+        </div>
+        <div class="flow-item tertiary">
+          <div class="flow-step">03</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--openai)">GPT-5.4 (Max Mode)</div>
+            <div class="flow-desc">대형 코드베이스 전체 분석, 레거시 마이그레이션. 캐시 90% 할인으로 반복 작업 효율.</div>
+          </div>
+        </div>
+        <div class="flow-item" style="border-left-color:var(--text-dim)">
+          <div class="flow-step">절약</div>
+          <div class="flow-content">
+            <div class="flow-model" style="color:var(--xai)">Grok Code / GPT-5.1 Codex Mini</div>
+            <div class="flow-desc">간단한 함수 수정, 변수명 변경, 포맷팅. 단순 반복 작업에 비용 최소화.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── 4. 상황별 결정 매트릭스 ── -->
+  <div class="section-title">04 · 상황별 모델 선택 매트릭스</div>
+  <div class="matrix">
+    <div class="matrix-grid">
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">📐 아키텍처 설계</div>
+        <div class="matrix-recommend" style="color:var(--claude)">Claude 4.6 Opus</div>
+        <div class="matrix-reason">Thinking 모드 활성화. 복잡한 트레이드오프 분석, 시스템 설계 결정에 최고 지능 필요.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">📝 PRD / 기획서</div>
+        <div class="matrix-recommend" style="color:var(--claude)">Claude 4.6 Sonnet</div>
+        <div class="matrix-reason">긴 문서 작성, 논리적 구조화에 강점. 200k 컨텍스트로 전체 기획서 한번에 처리.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">🖼️ UI/UX 검토</div>
+        <div class="matrix-recommend" style="color:var(--google)">Gemini 3.1 Pro</div>
+        <div class="matrix-reason">이미지 첨부 후 디자인 피드백. 스크린샷, 목업, 와이어프레임 분석에 멀티모달 강점.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">⚡ 빠른 초안</div>
+        <div class="matrix-recommend" style="color:var(--google)">Gemini 3 Flash</div>
+        <div class="matrix-reason">빠른 응답 속도와 저렴한 비용. 아이디어 검증, 빠른 초안 작성, 간단한 질문.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">🔨 신규 기능 개발</div>
+        <div class="matrix-recommend" style="color:var(--openai)">GPT-5.3 Codex</div>
+        <div class="matrix-reason">코드 생성 특화 모델. Agent 모드로 여러 파일 동시 수정, 테스트 코드 자동 생성.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">🐛 디버깅 · 분석</div>
+        <div class="matrix-recommend" style="color:var(--claude)">Claude 4.6 Sonnet</div>
+        <div class="matrix-reason">에러 원인 파악, 코드 흐름 설명에 탁월. 긴 스택 트레이스도 정확하게 분석.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">🏗️ 대형 코드베이스</div>
+        <div class="matrix-recommend" style="color:var(--openai)">GPT-5.4 Max Mode</div>
+        <div class="matrix-reason">1M 컨텍스트 + 캐시 90% 할인. 전체 프로젝트 파악, 레거시 코드 마이그레이션.</div>
+      </div>
+
+      <div class="matrix-cell">
+        <div class="matrix-scenario">💰 비용 절감</div>
+        <div class="matrix-recommend" style="color:var(--xai)">Grok Code</div>
+        <div class="matrix-reason">$0.2/1M 입력으로 최저가. 간단한 코드 수정, 포맷팅, 변수명 변경 등 단순 작업.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 5. 가격 티어 ── -->
+  <div class="section-title">05 · 비용 티어별 추천 모델</div>
+  <div class="pricing-row">
+
+    <div class="pricing-tier">
+      <div class="tier-label budget">💚 Budget — 절약형</div>
+      <div class="tier-price budget">$0.2 ~ $1</div>
+      <div class="tier-models">
+        Grok Code<br>
+        GPT-5.1 Codex Mini<br>
+        Gemini 3 Flash<br>
+        Claude 4.5 Haiku<br>
+        GPT-5 Mini
+      </div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:12px;line-height:1.6">
+        간단한 수정, 빠른 질문,<br>반복 작업에 적합
+      </div>
+    </div>
+
+    <div class="pricing-tier" style="border-color:rgba(247,160,106,0.3)">
+      <div class="tier-label balanced">🟡 Balanced — 균형형</div>
+      <div class="tier-price balanced">$2 ~ $5</div>
+      <div class="tier-models">
+        Claude 4.6 Sonnet ★<br>
+        GPT-5.3 Codex ★<br>
+        Gemini 3.1 Pro<br>
+        Composer 1.5<br>
+        GPT-5.4
+      </div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:12px;line-height:1.6">
+        일상적인 기획·코딩 작업<br><strong>가장 추천하는 티어</strong>
+      </div>
+    </div>
+
+    <div class="pricing-tier" style="border-color:rgba(247,106,154,0.3)">
+      <div class="tier-label premium">🔴 Premium — 고성능</div>
+      <div class="tier-price premium">$5 ~ $30</div>
+      <div class="tier-models">
+        Claude 4.6 Opus ★<br>
+        Claude 4.5 Opus<br>
+        Claude 4.6 Opus Fast<br>
+        GPT-5 Fast
+      </div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:12px;line-height:1.6">
+        복잡한 아키텍처, 중요한<br>의사결정, 고품질 필요 시
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── 6. 핵심 팁 ── -->
+  <div class="section-title">06 · 기획·코딩 작업자를 위한 핵심 팁</div>
+  <div class="tip-box">
+    <div class="tip-title">// Pro Tips</div>
+    <div class="tip-grid">
+      <div class="tip-item">
+        <div class="tip-dot"></div>
+        <div class="tip-text"><strong>Thinking 모드 활용:</strong> Claude Opus/Sonnet의 Thinking 모드는 복잡한 기획 결정이나 아키텍처 설계 시 활성화. 단, 요청당 2배 비용 소모.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-dot"></div>
+        <div class="tip-text"><strong>Max Mode 전략:</strong> GPT-5.4 Max Mode는 캐시 90% 할인 + 1M 컨텍스트. 대형 프로젝트 전체 분석 시 오히려 경제적일 수 있음.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-dot"></div>
+        <div class="tip-text"><strong>Agent 모드 활용:</strong> 복잡한 코딩 작업은 Agent 기능이 있는 모델 선택. 여러 파일 동시 수정, 터미널 명령 실행 가능.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-dot"></div>
+        <div class="tip-text"><strong>기획 → 코딩 전환:</strong> 기획서 작성은 Claude Sonnet, 구현은 GPT Codex로 전환하는 워크플로우가 효율적.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-dot"></div>
+        <div class="tip-text"><strong>이미지 첨부 기획:</strong> UI 스크린샷, 와이어프레임 분석은 Gemini 3.1 Pro 또는 Claude Sonnet (Image 지원 모델) 사용.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-dot"></div>
+        <div class="tip-text"><strong>Auto 라우터 활용:</strong> Cursor의 Auto 모드는 작업 유형에 따라 비용·성능을 자동 최적화. 처음엔 Auto로 시작 권장.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;font-size:11px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;padding-top:20px;border-top:1px solid var(--border)">
+    Based on cursor.sh/docs/models · Updated 2026.03 · ★ = 기획·코딩 작업 추천 모델
+  </div>
+
+</div>
+</body>
+</html>
