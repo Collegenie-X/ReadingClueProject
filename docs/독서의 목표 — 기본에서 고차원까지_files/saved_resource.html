@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<!-- saved from url=(0253)https://63b5c69c-b5e3-403e-bd0f-2021e191d09e.frame.claudeusercontent.com/_f/1786335431-0e10/?__frame_t=ECzl8YTb8gvhpZU9NBV8OOhq.9816a790-3a32-4fe7-a838-ae63fe5d26dc.da016d4c-938f-4350-ba62-542d785e04fd.1786339093&__frame_v=manifest.620218948d8bfd96.json -->
+<html data-theme="dark" style="color-scheme: dark;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- frame-runtime --><!--<base href="/_f/1786335431-0e10/">--><base href="."><script>window.__FRAME_PREAMBLE={"capabilities":{"assets":"assets.hcOK0ALv.js","comments":"comments.BKZ3qutA.js","db":"db.CeV_J5G-.js","downloads":"downloads.BXsoAvg9.js","mcp":"mcp.CYSdpjo0.js","permissions":"permissions.DdITF2Mk.js","sample":"sample.DpdXn9di.js","self":"self.BN4be5De.js","user":"user.Cr_h1ETf.js"},"transforms":"_transforms.VaITkagF.js","comments":"_comments.CNSvmFji.js","translate":"_translate.BOzFH2D9.js"}</script><script>(function(){"use strict";var ne=["light","dark","system"];function oe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function W(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function se(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&ne.includes(n)}function ie(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}var Y=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,name:null,avatarUrl:null,email:null}))})),ae={sample:"sample"};function x(){const e=new Uint8Array(20);try{crypto.getRandomValues(e)}catch{for(let n=0;n<e.length;n++)e[n]=Math.floor(Math.random()*256)}let t="";for(const n of e)t+=(n%36).toString(36);return t}function ce(e,t){const n=r=>{const o={path:r},i=r.split("/");return{id:i[i.length-1],path:r,get:()=>t("get",[o]),set:g=>t("set",[o,g]),update:g=>t("update",[o,g]),delete:()=>t("delete",[o]),acquire:g=>t("acquire",[o,g]),onSnapshot:(g,y)=>t("subscribe",[o,g,y]),collection:g=>a(r+"/"+String(g))}},u=r=>({where:(o,i,g)=>u({...r,where:[...r.where??[],{f:String(o),op:String(i),v:g}]}),orderBy:(o,i)=>u({...r,orderBy:{f:String(o),dir:i===void 0?"asc":String(i)}}),limit:o=>u({...r,limit:Number(o)}),get:()=>t("query",[r]),onSnapshot:(o,i)=>t("subscribe",[r,o,i])}),a=r=>({...u({collection:r}),path:r,doc:o=>n(r+"/"+(o===void 0?x():String(o))),add:o=>{const i=n(r+"/"+x());return Promise.resolve(i.set(o)).then(()=>i)}});e.doc=r=>n(String(r)),e.collection=r=>a(String(r))}function J(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let o=0;o<t.length;o++){const i=t[o];if(i&&i.matches&&i.matches("a[href],area[href]")){n=i;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const u=n.getAttribute("href");if(!u)return;let a,r;try{a=new URL(u,document.baseURI),r=new URL(document.baseURI).origin}catch{return}if((a.protocol==="http:"||a.protocol==="https:")&&a.origin!==r){e.preventDefault();const o=(n.getAttribute("target")??document.querySelector("base[target]")?.getAttribute("target")??"").toLowerCase(),i=e.type==="auxclick"||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||!["","_self","_top","_parent"].includes(o);parent.postMessage({__frame_nav:!0,url:a.href,newTab:i},"*")}}var G={};function I(e){if(window===top)return;const t=Date.now();t-(G[e]||0)<500||(G[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}var le=2e3,V=["wheel","touchstart","touchmove","keydown","pointerdown"],X=0;function ue(e){e.isTrusted&&(X=Date.now())}function fe(){addEventListener("click",J,!0),addEventListener("auxclick",J,!0)}function de(){for(let e=0;e<V.length;e++)addEventListener(V[e],ue,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-X<le&&I("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&I("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&I("click")},{capture:!0,passive:!0})}var q="__frame_scroll",me=150,pe=310,ge=160,he=3e4;function ve(){let e=0,t=!1,n=!1,u=!1,a=0,r=null;const o=d=>{try{sessionStorage.setItem(q,JSON.stringify({y:d}))}catch{}},i=()=>{if(clearTimeout(e),r===null)return;const d=r;r=null,o(d)},g=()=>{if(t){t=!1;return}n=!0,r=scrollY,clearTimeout(e),e=setTimeout(i,me)};try{addEventListener("scroll",g,{passive:!0}),addEventListener("pagehide",i)}catch{}const y=()=>{let d;try{d=sessionStorage.getItem(q)}catch{return null}if(d===null)return null;let l;try{l=JSON.parse(d)}catch{l=null}const p=l?.y;if(!(typeof p=="number"&&Number.isFinite(p)&&p>=0)){try{sessionStorage.removeItem(q)}catch{}return null}return p};let c=!1;const f=d=>{try{const l=scrollY;scrollTo({top:d,left:0,behavior:"instant"}),a=d,u=!0,clearTimeout(e),r=null,o(d);const p=scrollY;p!==l&&(t=!0),p!==d&&!c&&(c=!0,addEventListener("load",()=>{try{if(scrollY===p){const v=y();f(v!==null?v:a)}}catch{}},{once:!0}))}catch{}},m=()=>{try{return!!location.hash}catch{return!0}};let h=!1;const _=()=>{try{if(h||innerWidth>pe||innerHeight>ge)return;h=!0;const d=Date.now(),l=()=>{try{removeEventListener("resize",l)}catch{}if(Date.now()-d>he||n||m())return;const p=y();f(p!==null?p:a)};addEventListener("resize",l)}catch{}};let w=!1,S=!1;return{restore(){if(w||(w=!0,m()))return;const d=y();d!==null&&(f(d),_())},promoted(){if(S||(S=!0,m()))return;const d=y();d!==null?(f(d),_()):u&&f(a)}}}function _e(e,t,n){const u=[...t.values()].filter(a=>a.targets.some(r=>r.startsWith(e+".")));return{wrap(a,r){const o=`${e}.${a}`,i=u.filter(g=>g.targets.includes(o));return i.length===0?(...g)=>{try{return r(...g)}catch(y){return Promise.reject(y)}}:(...g)=>{let y=g;for(const f of i){const m=f.module.parameters;if(m)try{y=m(y)}catch{return Promise.reject({code:"transform_error",id:f.id,scope:e,message:"parameters transform failed"})}}let c;try{c=r(...y)}catch(f){c=Promise.reject(f)}return c.then(f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],_=h.module.returns;if(_)try{f=_(f)}catch{return n({id:h.id,scope:e,leg:"returns"}),f}}return f},f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],_=h.module.throws;if(_)try{f=_(f)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(f)}}return Promise.reject(f)})}}}}function ye(e,t,n,u=()=>{}){const a=new Set(e.changes??[]),r=new Map;for(const o of a){const i=t[o];i&&r.set(o,i)}return{contract:e.contract,changes:a,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:r,shellOrigin:n.shellOrigin,mount:n.mount,pipe:o=>_e(o,r,u)}}var Ae="modulepreload",Re=function(e){return"/"+e},je={},be=function(t,n,u){let a=Promise.resolve();function r(o){const i=new Event("vite:preloadError",{cancelable:!0});if(i.payload=o,window.dispatchEvent(i),!i.defaultPrevented)throw o}return a.then(o=>{for(const i of o||[])i.status==="rejected"&&r(i.reason);return t().catch(r)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let u=0;for(let a=0;a<n.length;a++){const r=n[a];try{e(t,r,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[r]}catch{}try{e(t,r,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[r]=="function"&&u++}if(u&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:u},"*")}catch{}})();var Ee=1e4,we=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function Q(e){for(const t of we)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var k=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),D=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,B=window.__FRAME_PREAMBLE?.translate,C=/^[\w.-]+\.js$/,Se=/^[a-z][a-z0-9_-]{0,63}$/,Z=null,M=null;function $(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var F=!1;function ee(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}var te=256,P=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}}),db:Object.assign(Object.create(null),{subscribe:{handlerArg:1,errArg:2}})}),L=new Map;function re(e,t){const n=L.get(e);if(!n)return;const u=Object.assign(Object.create(null),t);Object.assign(n.impl,u),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const a=n.queue;n.queue=[];for(const r of a){const o=u[r.method];if(o)if(P[e]?.[r.method])try{r.resolve(o(...r.args))}catch{T(r,P[e][r.method],{code:"transform_error",message:`${e}.${r.method} rejected its arguments`})}else o(...r.args).then(r.resolve,r.reject);else{const i={code:"capability_removed",message:`${e}.${r.method} is not in this runtime`},g=P[e]?.[r.method];if(g){T(r,g,i);continue}r.reject(i)}}}function Oe(e,t){const n=L.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const u=n.queue;n.queue=[];for(const a of u){const r=P[e]?.[a.method];if(r){T(a,r,t);continue}a.reject(t)}}function N(e,t){const n=Y[e];if(!n){Oe(e,t);return}re(e,Object.fromEntries(Object.entries(n).map(([u,a])=>[u,()=>Promise.resolve(a)])))}function T(e,t,n){if(e.syncState?.dead)return;const u=t.errArg===void 0?void 0:e.args[t.errArg],a=t.errArg===void 0?e.args[t.handlerArg]:u;typeof a=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{a(t.errArg===void 0?{type:"error",error:n}:n)}catch(r){ie(r)}})}var H=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(H&&H.writable===!1)){fe(),de();let e=null;try{e=ve()}catch{}const t=H?.value??{};$(window,"claude",t);const n=c=>{const f={impl:Object.create(null),queue:[]};L.set(c,f);const m=f.impl,h=d=>({code:"queue_overflow",message:`${c}.${d}: pre-init call queue is full`}),_=(d,l)=>{if(f.queue.length>=te){const p=Y[c];return p&&d in p?Promise.resolve(p[d]):Promise.reject(h(d))}return new Promise((p,v)=>{f.queue.push({method:d,args:l,resolve:p,reject:v})})},w=ae[c],S=new Proxy(w===void 0?m:(()=>{}),{apply:(d,l,p)=>{const v=w,E=m[v]??m.__settled;return E?E(...p):_(v,p)},get:(d,l)=>{if(typeof l!="string"||l==="then"||l==="toJSON"||l==="valueOf")return;if(l==="toString")return Object.prototype.toString;if(w!==void 0&&(l==="call"||l==="apply"||l==="bind"))return Function.prototype[l];const p=P[c]?.[l];return p?(...v)=>{if(typeof v[p.handlerArg]!="function")throw new TypeError(`${c}.${l} requires a handler function`);const E=m[l];if(E)return E(...v);if(m.__settled){const b={dead:!1},U={args:[...v],syncState:b};return m.__settled().catch(s=>T(U,p,s)),()=>{b.dead=!0}}if(f.queue.length>=te){const b={dead:!1};return T({args:[...v],syncState:b},p,h(l)),()=>{b.dead=!0}}let A=null;const R={dead:!1};return f.queue.push({method:l,args:v,resolve:b=>{A=typeof b=="function"?b:null,R.dead&&A?.()},reject:()=>{},syncState:R}),()=>{R.dead=!0,A?.()}}:(...v)=>{const E=m[l]??m.__settled;return E?E(...v):_(l,v)}},set:()=>!1});c==="db"&&ce(m,(d,l)=>S[d](...l)),$(t,c,S)};for(const c of Object.keys(k)){if(t[c]!==void 0){$(t,c,t[c]);continue}n(c)}let u=null,a=null,r=0;const o=c=>{c.source!==parent||!Q(c.origin)||oe(c.data)&&(u=c.data.__frame_init,M=c.origin,removeEventListener("message",o),clearTimeout(r),a?.())};addEventListener("message",o),parent.postMessage({__frame_connect:!0},"*");const i=new Promise(c=>{a=c,r=setTimeout(()=>{removeEventListener("message",o),c()},Ee)}),g=document.readyState==="loading"?new Promise(c=>document.addEventListener("DOMContentLoaded",()=>c(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const y=c=>{if(!(c.source!==parent||!Q(c.origin))&&W(c.data)){removeEventListener("message",y);try{e?.promoted()}catch{}}};addEventListener("message",y),i.then(async()=>{if(!u||!M){for(const s of L.keys())N(s,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}ee(u.theme);const c=M;let f=!1,m=!1;addEventListener("message",s=>{if(s.source!==parent||s.origin!==c)return;se(s.data)&&ee(s.data.__frame_theme.theme);const O=s.data?.__fc_mode;O&&typeof O=="object"&&!f&&z&&C.test(z)&&(f=!0,h(z).then(K=>K.install?.(c,O.on===!0)).catch(()=>{}));const j=s.data?.__ft_cmd;j&&typeof j=="object"&&!m&&B&&C.test(B)&&(m=!0,h(B).then(K=>K.install?.(c,j)).catch(()=>{}))});const h=s=>be(()=>import("/_runtime/"+s),void 0),_=Object.keys(u.capabilities??{});for(const s of _)Object.hasOwn(k,s)||Se.test(s)&&t[s]===void 0&&(n(s),N(s,{code:"capability_disabled",message:"capability not in this runtime generation"}));const w=_.filter(s=>Object.hasOwn(k,s)).map(s=>[s,k[s]]).filter(s=>typeof s[1]=="string"&&C.test(s[1])),[S,...d]=await Promise.allSettled([D&&C.test(D)?h(D):Promise.resolve({}),...w.map(([,s])=>h(s))]),l=M;Z=ye(u,S.status==="fulfilled"&&S.value?.TRANSFORMS||{},{shellOrigin:l,mount:re},s=>parent.postMessage({__frame_cap_telemetry:s},l));const p=s=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:s}},l),v=Z;d.forEach((s,O)=>{const j=w[O][0];if(s.status!=="fulfilled"){p(j);return}try{s.value?.install?.(v)}catch{p(j)}});for(const[s,O]of L)if(!(O.queue.length===0&&Object.keys(O.impl).length>0)){if(_.includes(s)){N(s,{code:"capability_disabled",message:"capability not available in this session"});continue}N(s,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},M);let E=-1,A=0;const R=()=>{A=0;const s=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);s!==E&&(E=s,parent.postMessage({__frame_size:!0,h:s},l))},b=()=>{A||(A=setTimeout(R,200))},U=new ResizeObserver(b);U.observe(document.documentElement),document.body&&U.observe(document.body),document.addEventListener("load",b,!0),document.fonts?.ready.then(b,()=>{}),addEventListener("beforeprint",()=>{E=-1,R()}),b(),addEventListener("message",s=>{if(!(s.source!==parent||s.origin!==l)&&W(s.data)){try{e?.promoted()}catch{}E=-1,b()}})})}})();</script><!-- /frame-runtime --><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>독서의 목표 — 기본에서 고차원까지</title>
+<style>
+  @font-face {
+    font-family: 'Display';
+    src: local('Georgia'), local('Noto Serif KR'), local('Apple SD Gothic Neo');
+  }
+
+  :root {
+    --bg: #FAFAF7;
+    --bg-card: #FFFFFF;
+    --bg-accent: #F0EDE6;
+    --text: #2C2A25;
+    --text-sub: #6B6760;
+    --text-muted: #9E998F;
+    --accent: #3D6B5E;
+    --accent-light: #E8F0EC;
+    --accent-dark: #2A4D42;
+    --warm: #C47A4A;
+    --warm-light: #F5EDE6;
+    --border: #E5E2DA;
+    --border-light: #EDEBE5;
+    --shadow: rgba(44,42,37,0.06);
+    --pyramid-1: #C47A4A;
+    --pyramid-2: #D4956A;
+    --pyramid-3: #B8956E;
+    --pyramid-4: #7FA seventeen;
+    --pyramid-4: #7FA68E;
+    --pyramid-5: #5E8E7A;
+    --pyramid-6: #4A7D6A;
+    --pyramid-7: #3D6B5E;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1A1917;
+      --bg-card: #242320;
+      --bg-accent: #2A2925;
+      --text: #E8E5DE;
+      --text-sub: #A09B90;
+      --text-muted: #706B60;
+      --accent: #6DB89E;
+      --accent-light: #2A3832;
+      --accent-dark: #8ED4B8;
+      --warm: #D4956A;
+      --warm-light: #332A22;
+      --border: #3A3830;
+      --border-light: #302E28;
+      --shadow: rgba(0,0,0,0.3);
+      --pyramid-1: #D4956A;
+      --pyramid-2: #C4A07A;
+      --pyramid-3: #A0956E;
+      --pyramid-4: #7FA68E;
+      --pyramid-5: #6DB89E;
+      --pyramid-6: #5EAAA0;
+      --pyramid-7: #6DB89E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1A1917;
+    --bg-card: #242320;
+    --bg-accent: #2A2925;
+    --text: #E8E5DE;
+    --text-sub: #A09B90;
+    --text-muted: #706B60;
+    --accent: #6DB89E;
+    --accent-light: #2A3832;
+    --accent-dark: #8ED4B8;
+    --warm: #D4956A;
+    --warm-light: #332A22;
+    --border: #3A3830;
+    --border-light: #302E28;
+    --shadow: rgba(0,0,0,0.3);
+    --pyramid-1: #D4956A;
+    --pyramid-2: #C4A07A;
+    --pyramid-3: #A0956E;
+    --pyramid-4: #7FA68E;
+    --pyramid-5: #6DB89E;
+    --pyramid-6: #5EAAA0;
+    --pyramid-7: #6DB89E;
+  }
+  :root[data-theme="light"] {
+    --bg: #FAFAF7;
+    --bg-card: #FFFFFF;
+    --bg-accent: #F0EDE6;
+    --text: #2C2A25;
+    --text-sub: #6B6760;
+    --text-muted: #9E998F;
+    --accent: #3D6B5E;
+    --accent-light: #E8F0EC;
+    --accent-dark: #2A4D42;
+    --warm: #C47A4A;
+    --warm-light: #F5EDE6;
+    --border: #E5E2DA;
+    --border-light: #EDEBE5;
+    --shadow: rgba(44,42,37,0.06);
+    --pyramid-1: #C47A4A;
+    --pyramid-2: #D4956A;
+    --pyramid-3: #B8956E;
+    --pyramid-4: #7FA68E;
+    --pyramid-5: #5E8E7A;
+    --pyramid-6: #4A7D6A;
+    --pyramid-7: #3D6B5E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .header h1 {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text);
+    text-wrap: balance;
+    margin-bottom: 0.75rem;
+  }
+  .header p {
+    color: var(--text-sub);
+    font-size: 1rem;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+  }
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  .section { margin-bottom: 3rem; }
+
+  /* Pyramid SVG */
+  .pyramid-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 2.5rem;
+    overflow-x: auto;
+  }
+  .pyramid-wrap svg text {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  }
+
+  /* Goal cards grid */
+  .goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1rem;
+  }
+  .goal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 1.25rem 1.35rem;
+    box-shadow: 0 1px 3px var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .goal-card:hover {
+    box-shadow: 0 4px 12px var(--shadow);
+  }
+  .goal-card .icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .goal-card h3 {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+    color: var(--text);
+  }
+  .goal-card .en {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .goal-card p {
+    font-size: 0.88rem;
+    color: var(--text-sub);
+    line-height: 1.65;
+    margin-bottom: 0.5rem;
+  }
+  .goal-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .goal-card ul li {
+    font-size: 0.82rem;
+    color: var(--text-sub);
+    padding: 0.15rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .goal-card ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0.2rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .goal-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.4rem;
+  }
+
+  /* Higher-order reading */
+  .higher-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .higher-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--shadow);
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .higher-card .level-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .higher-card h3 {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+  }
+  .higher-card .en-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .higher-card .desc {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.25rem;
+  }
+  .detail-item {
+    font-size: 0.82rem;
+  }
+  .detail-item .label {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.15rem;
+    font-weight: 600;
+  }
+  .detail-item .value {
+    color: var(--text-sub);
+    line-height: 1.55;
+  }
+
+  /* Flow diagram */
+  .flow-wrap {
+    overflow-x: auto;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  .flow-wrap svg text {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  }
+
+  /* Strategy table */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 1px 3px var(--shadow);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    font-variant-numeric: tabular-nums;
+  }
+  thead th {
+    background: var(--bg-accent);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--text-sub);
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-sub);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--bg-accent); }
+  td:first-child {
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  /* Bloom comparison */
+  .bloom-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  .bloom-wrap svg text {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  }
+
+  /* Quote */
+  .closing-quote {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .closing-quote blockquote {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    font-style: italic;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  .closing-quote .attr {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-family: sans-serif;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 2rem 1rem 3rem; }
+    .goals-grid { grid-template-columns: 1fr; }
+    .higher-card { grid-template-columns: 1fr; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .higher-card .level-badge { width: 44px; height: 44px; font-size: 1.2rem; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="header">
+    <div class="header-eyebrow">Reading Goals Framework</div>
+    <h1>독서의 목표</h1>
+    <p>재미에서 시작해 삶의 변혁에 이르기까지 — 독서 목표의 7단계 체계와 고차원 독서 전략</p>
+  </header>
+
+  <!-- ── Pyramid ── -->
+  <section class="section">
+    <h2 class="section-title">독서 목표의 발전 피라미드</h2>
+    <p class="section-sub">낮은 단계에서 높은 단계로 올라갈수록 독서의 깊이와 사고의 복잡성이 증가합니다</p>
+    <div class="pyramid-wrap">
+      <svg viewBox="0 0 700 420" width="700" xmlns="http://www.w3.org/2000/svg">
+        <!-- Level 7 — top -->
+        <polygon points="350,20 420,80 280,80" fill="var(--pyramid-7)" opacity="0.92"></polygon>
+        <text x="350" y="62" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">변혁</text>
+        <text x="350" y="75" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Transformation</text>
+
+        <!-- Level 6 -->
+        <polygon points="280,84 420,84 460,140 240,140" fill="var(--pyramid-6)" opacity="0.9"></polygon>
+        <text x="350" y="117" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">통합 · 창조</text>
+        <text x="350" y="132" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Synthesis · Creation</text>
+
+        <!-- Level 5 -->
+        <polygon points="240,144 460,144 500,200 200,200" fill="var(--pyramid-5)" opacity="0.88"></polygon>
+        <text x="350" y="177" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">분석 · 비판</text>
+        <text x="350" y="192" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Analysis · Critical Thinking</text>
+
+        <!-- Level 4 -->
+        <polygon points="200,204 500,204 535,260 165,260" fill="var(--pyramid-4)" opacity="0.86"></polygon>
+        <text x="350" y="237" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">성찰 · 영감</text>
+        <text x="350" y="252" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Reflection · Inspiration</text>
+
+        <!-- Level 3 -->
+        <polygon points="165,264 535,264 565,320 135,320" fill="var(--pyramid-3)" opacity="0.84"></polygon>
+        <text x="350" y="297" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">공감 · 치유</text>
+        <text x="350" y="312" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Empathy · Healing</text>
+
+        <!-- Level 2 -->
+        <polygon points="135,324 565,324 592,380 108,380" fill="var(--pyramid-2)" opacity="0.82"></polygon>
+        <text x="350" y="357" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">정보 · 학습</text>
+        <text x="350" y="372" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Information · Learning</text>
+
+        <!-- Level 1 — base -->
+        <polygon points="108,384 592,384 610,410 90,410" fill="var(--pyramid-1)" opacity="0.8"></polygon>
+        <text x="350" y="403" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">재미 · 흥미</text>
+
+        <!-- Side labels -->
+        <text x="68" y="405" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.1</text>
+        <text x="68" y="345" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.2</text>
+        <text x="68" y="290" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.3</text>
+        <text x="68" y="237" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.4</text>
+        <text x="68" y="177" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.5</text>
+        <text x="68" y="117" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.6</text>
+        <text x="68" y="62" text-anchor="end" fill="var(--text-muted)" font-size="9">Lv.7</text>
+
+        <!-- Right annotations -->
+        <line x1="615" y1="400" x2="635" y2="400" stroke="var(--border)" stroke-width="1"></line>
+        <text x="640" y="404" fill="var(--text-muted)" font-size="9">수용적 독서</text>
+        <line x1="615" y1="300" x2="635" y2="300" stroke="var(--border)" stroke-width="1"></line>
+        <text x="640" y="304" fill="var(--text-muted)" font-size="9">정서적 독서</text>
+        <line x1="615" y1="180" x2="635" y2="180" stroke="var(--border)" stroke-width="1"></line>
+        <text x="640" y="184" fill="var(--accent)" font-size="9" font-weight="600">고차원 독서</text>
+        <line x1="615" y1="65" x2="635" y2="65" stroke="var(--border)" stroke-width="1"></line>
+        <text x="640" y="69" fill="var(--accent)" font-size="9" font-weight="600">변혁적 독서</text>
+
+        <!-- Arrow -->
+        <line x1="30" y1="400" x2="30" y2="40" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowG)"></line>
+        <text x="28" y="225" text-anchor="middle" fill="var(--accent)" font-size="9" font-weight="600" transform="rotate(-90,28,225)">사고의 깊이 →</text>
+        <defs><marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="var(--accent)"></path></marker></defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── Basic Goals ── -->
+  <section class="section">
+    <h2 class="section-title">기본 독서 목표 6가지</h2>
+    <p class="section-sub">모든 독서의 출발점이 되는 근본적인 목적들</p>
+    <div class="goals-grid">
+
+      <div class="goal-card">
+        <div class="icon">🎭</div>
+        <h3>재미</h3>
+        <div class="en">Entertainment</div>
+        <p>즐거움과 몰입을 위한 독서. 일상에서 벗어나 상상의 세계로 떠나며, 스트레스를 해소하고 감성적 만족을 얻는다.</p>
+        <ul>
+          <li>긴장과 이완의 서사적 쾌감</li>
+          <li>캐릭터와의 감정적 동일시</li>
+          <li>일상 탈출과 상상력 확장</li>
+        </ul>
+        <span class="goal-tag">소설 · 판타지 · 에세이</span>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">📐</div>
+        <h3>학습</h3>
+        <div class="en">Learning</div>
+        <p>새로운 지식과 정보를 체계적으로 습득한다. 전문 역량을 강화하고, 어휘력·문해력·논리력을 함양한다.</p>
+        <ul>
+          <li>개념 이해와 지식 구조화</li>
+          <li>전문 분야 역량 심화</li>
+          <li>어휘·표현력·논리적 사고 향상</li>
+        </ul>
+        <span class="goal-tag">교과서 · 전문서 · 자기계발</span>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">🪞</div>
+        <h3>성찰</h3>
+        <div class="en">Reflection</div>
+        <p>자기 자신을 돌아보는 내면 탐색. 가치관과 신념을 재점검하고, 삶의 의미와 방향을 탐구한다.</p>
+        <ul>
+          <li>자아 정체성 탐구</li>
+          <li>가치관 · 신념 재정립</li>
+          <li>삶의 우선순위 재배치</li>
+        </ul>
+        <span class="goal-tag">철학 · 자서전 · 명상서</span>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">🤝</div>
+        <h3>공감</h3>
+        <div class="en">Empathy</div>
+        <p>타인의 삶과 감정을 이해하고, 다양한 관점과 문화를 체험하며 사회적 감수성을 확장한다.</p>
+        <ul>
+          <li>타인의 고통과 기쁨 체험</li>
+          <li>다문화 · 다양성 이해</li>
+          <li>편견 해소와 관점 전환</li>
+        </ul>
+        <span class="goal-tag">르포 · 다문화문학 · 구술사</span>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">💡</div>
+        <h3>영감</h3>
+        <div class="en">Inspiration</div>
+        <p>창의적 아이디어를 발굴하고, 동기부여와 도전 의식을 고취시키며 새로운 가능성을 발견한다.</p>
+        <ul>
+          <li>창의적 사고 촉진</li>
+          <li>도전 의지와 용기 함양</li>
+          <li>분야 간 연결 · 융합 사고</li>
+        </ul>
+        <span class="goal-tag">위인전 · 창업기 · 예술서</span>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">🌿</div>
+        <h3>치유</h3>
+        <div class="en">Bibliotherapy</div>
+        <p>심리적 안정과 정서적 회복을 위한 독서. 트라우마·불안·슬픔을 완화하고 자기 돌봄의 통로로 활용한다.</p>
+        <ul>
+          <li>정서적 카타르시스</li>
+          <li>자기 수용과 회복 탄력성</li>
+          <li>고립감 해소와 연결감 회복</li>
+        </ul>
+        <span class="goal-tag">심리에세이 · 치유문학 · 시</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Higher-Order Reading ── -->
+  <section class="section">
+    <h2 class="section-title">고차원 독서 5단계</h2>
+    <p class="section-sub">단순한 정보 수용을 넘어 텍스트를 분석·종합·평가·창조하는 수준의 독서</p>
+
+    <!-- Bloom's Taxonomy mapping -->
+    <div class="bloom-wrap">
+      <svg viewBox="0 0 700 100" width="700" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bloom bar -->
+        <text x="350" y="14" text-anchor="middle" fill="var(--text-muted)" font-size="9" letter-spacing="0.08em" font-weight="600">블룸(BLOOM) 분류법 대응</text>
+        <rect x="40" y="28" width="110" height="30" rx="6" fill="var(--pyramid-3)" opacity="0.25"></rect>
+        <text x="95" y="47" text-anchor="middle" fill="var(--text)" font-size="10" font-weight="600">기억 · 이해</text>
+        <text x="95" y="60" text-anchor="middle" fill="var(--text-muted)" font-size="8">기본 독서</text>
+
+        <text x="160" y="47" fill="var(--text-muted)" font-size="14">→</text>
+
+        <rect x="175" y="28" width="95" height="30" rx="6" fill="var(--pyramid-5)" opacity="0.35"></rect>
+        <text x="222" y="47" text-anchor="middle" fill="var(--text)" font-size="10" font-weight="600">분석</text>
+        <text x="222" y="60" text-anchor="middle" fill="var(--text-muted)" font-size="8">분석적 독서</text>
+
+        <text x="280" y="47" fill="var(--text-muted)" font-size="14">→</text>
+
+        <rect x="295" y="28" width="95" height="30" rx="6" fill="var(--pyramid-5)" opacity="0.5"></rect>
+        <text x="342" y="47" text-anchor="middle" fill="var(--text)" font-size="10" font-weight="600">평가</text>
+        <text x="342" y="60" text-anchor="middle" fill="var(--text-muted)" font-size="8">비판적 독서</text>
+
+        <text x="400" y="47" fill="var(--text-muted)" font-size="14">→</text>
+
+        <rect x="415" y="28" width="95" height="30" rx="6" fill="var(--pyramid-6)" opacity="0.6"></rect>
+        <text x="462" y="47" text-anchor="middle" fill="var(--text)" font-size="10" font-weight="600">종합</text>
+        <text x="462" y="60" text-anchor="middle" fill="var(--text-muted)" font-size="8">통합적 독서</text>
+
+        <text x="520" y="47" fill="var(--text-muted)" font-size="14">→</text>
+
+        <rect x="535" y="28" width="95" height="30" rx="6" fill="var(--pyramid-7)" opacity="0.7"></rect>
+        <text x="582" y="47" text-anchor="middle" fill="var(--text)" font-size="10" font-weight="600">창조</text>
+        <text x="582" y="60" text-anchor="middle" fill="var(--text-muted)" font-size="8">창조적 독서</text>
+
+        <!-- Bottom note -->
+        <text x="350" y="88" text-anchor="middle" fill="var(--text-muted)" font-size="8.5">변혁적 독서는 블룸 분류를 넘어 메지로(Mezirow)의 전환학습 이론에 해당</text>
+      </svg>
+    </div>
+
+    <div class="higher-cards">
+
+      <div class="higher-card">
+        <div class="level-badge" style="background: var(--accent-light);">🔬</div>
+        <div>
+          <h3>분석적 독서</h3>
+          <div class="en-label">Analytical Reading</div>
+          <p class="desc">텍스트의 구조, 논증, 전제를 해부하는 독서. 저자의 주장이 어떤 논리 위에 세워졌는지 파악하고, 각 문단이 전체 논증에서 어떤 역할을 하는지 분석한다.</p>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="label">핵심 질문</div>
+              <div class="value">저자의 주장은 무엇인가?<br>근거는 타당한가?<br>전제에 숨겨진 가정은?</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">실천 방법</div>
+              <div class="value">문단별 요약 작성<br>논리 구조도(마인드맵) 그리기<br>전제→근거→결론 3단 분석</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">사고 도구</div>
+              <div class="value">논증 지도, 개요 작성, 핵심어 추출</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">추천 장르</div>
+              <div class="value">학술 논문, 사설, 철학서, 법률 문서</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="higher-card">
+        <div class="level-badge" style="background: var(--accent-light);">🔗</div>
+        <div>
+          <h3>통합적 독서</h3>
+          <div class="en-label">Syntopical Reading</div>
+          <p class="desc">여러 텍스트를 교차 비교하여 하나의 주제를 입체적으로 이해하는 독서. 모티머 애들러가 <em>How to Read a Book</em>에서 제시한 최상위 독서 단계이다.</p>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="label">핵심 질문</div>
+              <div class="value">같은 주제에 대해 저자들은 어떻게 다르게 말하는가?<br>합의점과 대립점은?</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">실천 방법</div>
+              <div class="value">비교 독서 매트릭스 작성<br>주제별 다독 후 종합 노트<br>저자 간 가상 토론 구성</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">사고 도구</div>
+              <div class="value">비교표, 벤 다이어그램, 메타 분석</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">추천 장르</div>
+              <div class="value">동일 주제 복수 저서, 학술 리뷰 논문</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="higher-card">
+        <div class="level-badge" style="background: var(--accent-light);">⚖️</div>
+        <div>
+          <h3>비판적 독서</h3>
+          <div class="en-label">Critical Reading</div>
+          <p class="desc">텍스트의 신뢰성, 편향, 숨겨진 의도를 판별하는 독서. 저자가 말하지 않은 것, 배제된 관점, 논리적 오류를 탐지한다.</p>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="label">핵심 질문</div>
+              <div class="value">이 주장에 빠진 것은?<br>누구의 관점이 배제되었는가?<br>어떤 논리적 오류가 있는가?</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">실천 방법</div>
+              <div class="value">출처 교차 검증<br>논리적 오류(허수아비·미끄러운 경사 등) 탐지<br>반론 에세이 작성</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">사고 도구</div>
+              <div class="value">CRAAP 테스트, 소크라테스식 질문법</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">추천 장르</div>
+              <div class="value">뉴스 기사, 정치 평론, 광고, 프로파간다</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="higher-card">
+        <div class="level-badge" style="background: var(--warm-light);">🎨</div>
+        <div>
+          <h3>창조적 독서</h3>
+          <div class="en-label">Creative Reading</div>
+          <p class="desc">읽은 내용을 바탕으로 새로운 아이디어·작품·관점을 생성하는 독서. 기존 지식을 재조합하여 독창적인 산출물로 전환한다.</p>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="label">핵심 질문</div>
+              <div class="value">이 개념을 다른 분야에 적용하면?<br>나만의 해석과 확장은?<br>무엇을 만들 수 있는가?</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">실천 방법</div>
+              <div class="value">독후 글쓰기·블로그 작성<br>마인드맵 → 프로젝트 연결<br>다른 매체로 변환(시각화, 발표)</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">사고 도구</div>
+              <div class="value">SCAMPER 기법, 브레인라이팅, 유추 사고</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">추천 장르</div>
+              <div class="value">디자인 씽킹, 창작 워크북, 융합 에세이</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="higher-card">
+        <div class="level-badge" style="background: var(--warm-light);">🧭</div>
+        <div>
+          <h3>변혁적 독서</h3>
+          <div class="en-label">Transformative Reading</div>
+          <p class="desc">독서를 통해 세계관·행동·정체성이 근본적으로 변화하는 독서. 메지로(Mezirow)의 전환학습 이론에 기반하며, 읽기 이전과 이후의 자아가 달라진다.</p>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="label">핵심 질문</div>
+              <div class="value">이 책이 나의 삶을 어떻게 바꾸는가?<br>나의 기존 신념 중 무엇이 흔들리는가?</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">실천 방법</div>
+              <div class="value">Before/After 자아 성찰 일지<br>실천 계획 수립 및 90일 추적<br>멘토 독서 + 대화</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">변화 과정</div>
+              <div class="value">혼란 → 비판적 성찰 → 관점 전환 → 행동 변화 → 정체성 재구성</div>
+            </div>
+            <div class="detail-item">
+              <div class="label">추천 장르</div>
+              <div class="value">생애 전환기 에세이, 종교·영성서, 철학 고전</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Process Flow ── -->
+  <section class="section">
+    <h2 class="section-title">고차원 독서 프로세스</h2>
+    <p class="section-sub">각 단계가 어떻게 유기적으로 연결되는지 보여주는 흐름도</p>
+    <div class="flow-wrap">
+      <svg viewBox="0 0 720 280" width="720" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="var(--accent)"></path></marker>
+          <marker id="arrW" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="var(--warm)"></path></marker>
+        </defs>
+
+        <!-- Step 1: Read -->
+        <rect x="20" y="30" width="120" height="60" rx="8" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1.5"></rect>
+        <text x="80" y="55" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">📖 텍스트 읽기</text>
+        <text x="80" y="72" text-anchor="middle" fill="var(--text-muted)" font-size="9">초독 · 통독</text>
+
+        <line x1="140" y1="60" x2="170" y2="60" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrF)"></line>
+
+        <!-- Step 2: Analyze -->
+        <rect x="175" y="30" width="120" height="60" rx="8" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"></rect>
+        <text x="235" y="55" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">🔬 분석</text>
+        <text x="235" y="72" text-anchor="middle" fill="var(--text-muted)" font-size="9">구조 · 논증 해부</text>
+
+        <line x1="295" y1="60" x2="325" y2="60" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrF)"></line>
+
+        <!-- Step 3: Critique -->
+        <rect x="330" y="30" width="120" height="60" rx="8" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"></rect>
+        <text x="390" y="55" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">⚖️ 비판</text>
+        <text x="390" y="72" text-anchor="middle" fill="var(--text-muted)" font-size="9">편향 · 오류 판별</text>
+
+        <line x1="450" y1="60" x2="480" y2="60" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrF)"></line>
+
+        <!-- Step 4: Synthesize -->
+        <rect x="485" y="30" width="120" height="60" rx="8" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"></rect>
+        <text x="545" y="55" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">🔗 통합</text>
+        <text x="545" y="72" text-anchor="middle" fill="var(--text-muted)" font-size="9">교차 비교 · 종합</text>
+
+        <!-- Down arrow -->
+        <line x1="545" y1="90" x2="545" y2="130" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrF)"></line>
+
+        <!-- Step 5: Create -->
+        <rect x="485" y="135" width="120" height="60" rx="8" fill="var(--warm-light)" stroke="var(--warm)" stroke-width="1.5"></rect>
+        <text x="545" y="160" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">🎨 창조</text>
+        <text x="545" y="177" text-anchor="middle" fill="var(--text-muted)" font-size="9">새 아이디어 · 작품</text>
+
+        <line x1="485" y1="165" x2="455" y2="165" stroke="var(--warm)" stroke-width="1.5" marker-end="url(#arrW)"></line>
+
+        <!-- Step 6: Transform -->
+        <rect x="330" y="135" width="120" height="60" rx="8" fill="var(--warm-light)" stroke="var(--warm)" stroke-width="1.5"></rect>
+        <text x="390" y="160" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">🧭 변혁</text>
+        <text x="390" y="177" text-anchor="middle" fill="var(--text-muted)" font-size="9">관점 · 행동 · 정체성</text>
+
+        <!-- Feedback loop -->
+        <path d="M330,165 L240,165 Q200,165 200,130 Q200,95 200,90" fill="none" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="4,3"></path>
+        <text x="225" y="130" fill="var(--text-muted)" font-size="8">피드백 루프</text>
+        <text x="225" y="142" fill="var(--text-muted)" font-size="7.5">새로운 질문 → 재독</text>
+
+        <!-- Output boxes -->
+        <rect x="40" y="220" width="140" height="40" rx="6" fill="var(--bg-accent)" stroke="var(--border)" stroke-width="1"></rect>
+        <text x="110" y="244" text-anchor="middle" fill="var(--text-sub)" font-size="10">📝 독서 노트 · 요약</text>
+
+        <rect x="200" y="220" width="140" height="40" rx="6" fill="var(--bg-accent)" stroke="var(--border)" stroke-width="1"></rect>
+        <text x="270" y="244" text-anchor="middle" fill="var(--text-sub)" font-size="10">💬 토론 · 세미나</text>
+
+        <rect x="360" y="220" width="140" height="40" rx="6" fill="var(--bg-accent)" stroke="var(--border)" stroke-width="1"></rect>
+        <text x="430" y="244" text-anchor="middle" fill="var(--text-sub)" font-size="10">✍️ 글쓰기 · 발표</text>
+
+        <rect x="520" y="220" width="160" height="40" rx="6" fill="var(--bg-accent)" stroke="var(--border)" stroke-width="1"></rect>
+        <text x="600" y="244" text-anchor="middle" fill="var(--text-sub)" font-size="10">🔄 실천 · 삶의 변화</text>
+
+        <text x="360" y="215" text-anchor="middle" fill="var(--text-muted)" font-size="8" letter-spacing="0.1em" font-weight="600">산출물</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── Strategy Table ── -->
+  <section class="section">
+    <h2 class="section-title">독서 목표별 전략 · 방법 · 평가</h2>
+    <p class="section-sub">각 목표에 따른 구체적 실천 방법과 평가 기준</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>독서 목표</th>
+            <th>핵심 전략</th>
+            <th>구체적 방법</th>
+            <th>성취 지표</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🎭 재미</td>
+            <td>자유 선택 독서</td>
+            <td>독서 챌린지, 북클럽, 장르 탐험, 독서 마라톤</td>
+            <td>독서량 증가, 자발적 독서 빈도</td>
+          </tr>
+          <tr>
+            <td>📐 학습</td>
+            <td>SQ3R 독서법</td>
+            <td>코넬 노트, 플래시카드, 반복 읽기, 개념 지도</td>
+            <td>핵심 개념 설명 능력, 적용 문제 해결률</td>
+          </tr>
+          <tr>
+            <td>🪞 성찰</td>
+            <td>저널링 독서</td>
+            <td>독서 일기, 묵상 독서, 생애사 연결, 질문 일지</td>
+            <td>자기 인식 변화, 가치관 명료화 정도</td>
+          </tr>
+          <tr>
+            <td>🤝 공감</td>
+            <td>관점 전환 독서</td>
+            <td>역할극 토론, 감정 지도 그리기, 인물 인터뷰 쓰기</td>
+            <td>타인 관점 서술 능력, 공감 행동 증가</td>
+          </tr>
+          <tr>
+            <td>💡 영감</td>
+            <td>연결 독서</td>
+            <td>아이디어 노트, 이종 분야 교차 독서, 창작 프로젝트</td>
+            <td>아이디어 산출 건수, 실행 전환율</td>
+          </tr>
+          <tr>
+            <td>🌿 치유</td>
+            <td>독서 치료</td>
+            <td>감정 매칭 도서 처방, 필사, 독서 명상, 그룹 나눔</td>
+            <td>정서 안정 척도, 자기 효능감 변화</td>
+          </tr>
+          <tr style="background: var(--accent-light);">
+            <td>🔬 분석</td>
+            <td>구조적 독해</td>
+            <td>논증 구조 분석, 문단별 요약, 전제-결론 매핑</td>
+            <td>논증 재구성 정확도, 구조 파악 속도</td>
+          </tr>
+          <tr style="background: var(--accent-light);">
+            <td>⚖️ 비판</td>
+            <td>소크라테스식 탐구</td>
+            <td>출처 검증, 논리 오류 탐지, 반론 에세이, 세미나</td>
+            <td>오류 탐지 정확도, 반론 논증의 질</td>
+          </tr>
+          <tr style="background: var(--accent-light);">
+            <td>🔗 통합</td>
+            <td>주제별 다독</td>
+            <td>비교 독서 매트릭스, 메타 분석, 가상 토론 구성</td>
+            <td>관점 종합 보고서의 다면성과 균형</td>
+          </tr>
+          <tr style="background: var(--accent-light);">
+            <td>🎨 창조</td>
+            <td>PBL 독서</td>
+            <td>독후 글쓰기, 매체 전환, 프로토타입 제작, 발표</td>
+            <td>산출물의 독창성, 적용 범위</td>
+          </tr>
+          <tr style="background: var(--accent-light);">
+            <td>🧭 변혁</td>
+            <td>전환학습 독서</td>
+            <td>Before/After 성찰, 실천 계획 90일 추적, 멘토 독서</td>
+            <td>행동 변화 지속성, 정체성 서술 변화</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Closing ── -->
+  <div class="closing-quote">
+    <blockquote>
+      읽는 것에서 그치지 않고,<br>
+      읽은 것이 나를 바꿀 때<br>
+      진정한 독서가 완성된다.
+    </blockquote>
+    <div class="attr">— 독서의 목표 프레임워크</div>
+  </div>
+
+</div>
+
+</body></html>
