@@ -8,47 +8,7 @@ import { Section, SectionHead } from "./Section";
 import MatchPipeline from "./diagrams/MatchPipeline";
 import { BookChoiceDiagram, CriticalDiagram, FrameDiagram } from "./diagrams/MatchDiagrams";
 import { MATCH } from "@/lib/landing";
-import interestsJson from "@/data/interests.json";
-
-const AREAS = interestsJson.areas;
-const INTERESTS = interestsJson.interests;
-
-/** 관심사 6개 영역 · 50개 — 진단이 무엇을 골라 주는지 한눈에 */
-function AreaGrid() {
-  return (
-    <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
-      {AREAS.map((a) => {
-        const list = INTERESTS.filter((i) => i.area === a.code);
-        return (
-          <div
-            key={a.code}
-            className="rounded-[14px] border p-3"
-            style={{ borderColor: `${a.color}33`, background: `${a.color}0a` }}
-          >
-            <div className="flex items-center gap-2">
-              <span className="text-[14px]">{a.emoji}</span>
-              <span className="text-[13px] font-black text-white">{a.name}</span>
-              <span className="ml-auto text-[10px] font-bold" style={{ color: a.color }}>
-                {list.length}개
-              </span>
-            </div>
-            <div className="mt-2 flex flex-wrap gap-1">
-              {list.map((i) => (
-                <span
-                  key={i.id}
-                  title={i.description}
-                  className="rounded-full border border-white/6 bg-white/[.02] px-1.5 py-px text-[10.5px] text-white/50"
-                >
-                  {i.emoji} {i.name}
-                </span>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
+import AreaTabs from "./AreaTabs";
 
 /**
  * MatchSection — 관심 분야를 먼저 정하고, 그 관심사와 연관된 책을 비판적으로 읽는다.
@@ -94,7 +54,7 @@ export default function MatchSection() {
             <Highlight text={MATCH.areasNote} color="#a78bfa" />
           </p>
           <div className="mt-4">
-            <AreaGrid />
+            <AreaTabs />
           </div>
         </div>
       </Reveal>

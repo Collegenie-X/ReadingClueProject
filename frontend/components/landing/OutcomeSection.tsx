@@ -5,6 +5,7 @@ import { Button } from "@/components/ui";
 import Highlight from "@/components/ui/Highlight";
 import { Section, SectionHead } from "./Section";
 import { OUTCOME } from "@/lib/landing";
+import ChainTabs from "./ChainTabs";
 
 /**
  * 최종 결과물 선언 섹션 — 히어로 바로 다음에 온다.
@@ -46,52 +47,18 @@ export default function OutcomeSection() {
   );
 }
 
-/** ① 결과물 사슬 — 읽은 책에서 기획안까지 무엇이 무엇의 재료가 되는가 */
+/** ① 결과물 사슬 — 5단계 탭 (혼자 → 크루 → 혼자) */
 function ChainBlock() {
-  const { label, steps } = OUTCOME.chain;
-
   return (
     <Reveal delay={80} className="mt-12">
-      <p className="text-center text-[12px] font-semibold text-white/35">{label}</p>
-
-      <div className="mt-5 grid gap-3 md:grid-cols-5">
-        {steps.map((s, i) => (
-          <div key={s.name} className="relative">
-            <div
-              className="h-full rounded-[16px] border p-4"
-              style={{ borderColor: `${s.color}30`, background: `${s.color}0d` }}
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[22px]">{s.icon}</span>
-                <span
-                  className="rounded-full px-2 py-0.5 text-[10.5px] font-bold"
-                  style={{ background: `${s.color}1f`, color: s.color }}
-                >
-                  {s.week}
-                </span>
-              </div>
-              <p className="mt-3 text-[14px] leading-snug font-bold text-white">
-                {s.name}
-              </p>
-              <p className="mt-1.5 text-[12px] leading-snug text-white/45">
-                {s.note}
-              </p>
-            </div>
-
-            {/* 연결 화살표 (데스크톱) */}
-            {i < steps.length - 1 && (
-              <span className="absolute top-1/2 -right-[11px] z-10 hidden -translate-y-1/2 text-[13px] text-white/25 md:block">
-                →
-              </span>
-            )}
-          </div>
-        ))}
+      <p className="text-center text-[12px] font-semibold text-white/35">{OUTCOME.chain.label}</p>
+      <div className="mt-5">
+        <ChainTabs />
       </div>
     </Reveal>
   );
 }
 
-/** ② 기획안 목차 — 최종 산출물의 실제 형식 */
 function ContentsBlock() {
   const { label, items } = OUTCOME.contents;
 

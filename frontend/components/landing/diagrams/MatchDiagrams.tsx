@@ -100,24 +100,29 @@ export function BookChoiceDiagram() {
       {/* ─── 오른쪽: 부딪히는 책 ─── */}
       <g transform="translate(500 0)">
         <text x="0" y="22" textAnchor="middle" fill={GREEN} fontSize="10.5" fontWeight="800" fillOpacity=".85">
-          ✓ 입장이 엇갈리는 책 2권
+          ✓ 1주제 — 3권 병렬 독서
         </text>
 
-        {/* 서로 마주 본 두 책 */}
-        <g transform="translate(-92 88) rotate(-10)">
+        {/* 서로 마주 본 세 책 */}
+        <g transform="translate(-100 80) rotate(-12)">
           <OpenBook color={SKY} />
         </g>
-        <g transform="translate(92 88) rotate(10)">
+        <g transform="translate(0 68) rotate(0)">
+          <OpenBook color={CYAN} />
+        </g>
+        <g transform="translate(100 80) rotate(12)">
           <OpenBook color={VIOLET} />
         </g>
 
         {/* 부딪히는 지점 — 스파크 + 물음표 */}
         <g filter="url(#bc-spark)">
           {[
-            [-38, 60, -26, 68],
-            [38, 60, 26, 68],
-            [-40, 104, -28, 98],
-            [40, 104, 28, 98],
+            [-50, 60, -36, 68],
+            [50, 60, 36, 68],
+            [-50, 104, -36, 98],
+            [50, 104, 36, 98],
+            [-18, 56, -8, 64],
+            [18, 56, 8, 64],
           ].map(([x1, y1, x2, y2], i) => (
             <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={AMBER} strokeWidth="1.6" strokeLinecap="round" strokeOpacity=".6" />
           ))}
@@ -129,7 +134,7 @@ export function BookChoiceDiagram() {
         </g>
 
         <text x="0" y="146" textAnchor="middle" fill="rgba(255,255,255,.4)" fontSize="9.5">
-          두 책이 싸우는 지점이 곧
+          세 권이 부딪히는 지점이 곧
         </text>
         <text x="0" y="162" textAnchor="middle" fill={GREEN} fontSize="9.5" fontWeight="700" fillOpacity=".8">
           내 질문 한 문장이 된다
