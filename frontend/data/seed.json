@@ -1,0 +1,1279 @@
+{
+  "users": [
+    {
+      "id": "u-leader",
+      "name": "이지현",
+      "avatar": "👩‍🏫",
+      "role": "leader",
+      "school": "한빛중학교",
+      "grade": "사서교사",
+      "createdAt": "2026-06-18T09:00:00.000Z"
+    },
+    {
+      "id": "u-01",
+      "name": "김민준",
+      "avatar": "🧑",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T09:00:00.000Z"
+    },
+    {
+      "id": "u-02",
+      "name": "박서준",
+      "avatar": "👦",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T09:10:00.000Z"
+    },
+    {
+      "id": "u-03",
+      "name": "이수아",
+      "avatar": "👧",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T09:20:00.000Z"
+    },
+    {
+      "id": "u-04",
+      "name": "정하늘",
+      "avatar": "🧒",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T09:30:00.000Z"
+    },
+    {
+      "id": "u-05",
+      "name": "최윤서",
+      "avatar": "👩",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T09:40:00.000Z"
+    },
+    {
+      "id": "u-06",
+      "name": "강도윤",
+      "avatar": "🧑‍🦱",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T09:50:00.000Z"
+    },
+    {
+      "id": "u-07",
+      "name": "윤지아",
+      "avatar": "👩‍🦰",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T10:00:00.000Z"
+    },
+    {
+      "id": "u-08",
+      "name": "임세현",
+      "avatar": "🧑‍🦰",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T10:10:00.000Z"
+    },
+    {
+      "id": "u-09",
+      "name": "한소율",
+      "avatar": "👧🏻",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T10:20:00.000Z"
+    },
+    {
+      "id": "u-10",
+      "name": "오재호",
+      "avatar": "👦🏻",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T10:30:00.000Z"
+    },
+    {
+      "id": "u-11",
+      "name": "배유진",
+      "avatar": "👩🏻",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T10:40:00.000Z"
+    },
+    {
+      "id": "u-12",
+      "name": "신태오",
+      "avatar": "🧑🏻",
+      "role": "member",
+      "school": "한빛중학교",
+      "grade": "2학년",
+      "createdAt": "2026-06-19T10:50:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-hanbit",
+      "name": "한빛중 2학년 독서반",
+      "description": "함께 읽고, 각자의 문제를 발견합니다.",
+      "icon": "📖",
+      "category": "독서반",
+      "mode": "교실 병행",
+      "roadmapType": "4주 집중",
+      "maxMembers": 30,
+      "crewAssignMode": "관심사 진단 자동",
+      "tags": [
+        "중등",
+        "독서반",
+        "한빛중"
+      ],
+      "isPublic": false,
+      "inviteCode": "READ-HB2-26",
+      "leaderId": "u-leader",
+      "leaderName": "이지현",
+      "currentWeek": 3,
+      "season": 1,
+      "createdAt": "2026-06-18T09:00:00.000Z",
+      "region": "서울"
+    },
+    {
+      "id": "g-science",
+      "name": "과학 독서반",
+      "description": "탐구 보고서와 독서를 연결합니다. 실험과 책을 같이 봅니다.",
+      "icon": "🔬",
+      "category": "동아리",
+      "mode": "온라인",
+      "roadmapType": "4주 집중",
+      "maxMembers": 20,
+      "crewAssignMode": "관심사 진단 자동",
+      "tags": [
+        "고등",
+        "과학",
+        "탐구"
+      ],
+      "isPublic": true,
+      "inviteCode": "READ-SCI-01",
+      "leaderId": "u-leader",
+      "leaderName": "정우석",
+      "currentWeek": 2,
+      "season": 2,
+      "createdAt": "2026-07-18T09:00:00.000Z",
+      "region": "경기"
+    },
+    {
+      "id": "g-essay",
+      "name": "논술 준비반",
+      "description": "비문학을 읽고 논증을 훈련합니다. 반증 라운드 중심.",
+      "icon": "📝",
+      "category": "프로젝트",
+      "mode": "온라인",
+      "roadmapType": "4주 집중",
+      "maxMembers": 16,
+      "crewAssignMode": "지도자 수동",
+      "tags": [
+        "고등",
+        "논술",
+        "비문학"
+      ],
+      "isPublic": true,
+      "inviteCode": "READ-ESS-22",
+      "leaderId": "u-leader",
+      "leaderName": "김하람",
+      "currentWeek": 1,
+      "season": 1,
+      "createdAt": "2026-08-18T09:00:00.000Z",
+      "region": "부산"
+    },
+    {
+      "id": "g-climate",
+      "name": "환경 크루",
+      "description": "기후 문제를 직접 조사하고 캠페인까지 만들어 봅니다.",
+      "icon": "🌍",
+      "category": "프로젝트",
+      "mode": "교실 병행",
+      "roadmapType": "4주 집중",
+      "maxMembers": 24,
+      "crewAssignMode": "자율",
+      "tags": [
+        "중등",
+        "환경",
+        "캠페인"
+      ],
+      "isPublic": true,
+      "inviteCode": "READ-ECO-07",
+      "leaderId": "u-leader",
+      "leaderName": "문가온",
+      "currentWeek": 4,
+      "season": 3,
+      "createdAt": "2026-05-18T09:00:00.000Z",
+      "region": "대전"
+    },
+    {
+      "id": "g-parent",
+      "name": "은평 학부모 함께읽기",
+      "description": "아이와 같은 책을 읽고 각자의 문제를 나눕니다.",
+      "icon": "🏠",
+      "category": "자율",
+      "mode": "온라인",
+      "roadmapType": "자율",
+      "maxMembers": 12,
+      "crewAssignMode": "자율",
+      "tags": [
+        "학부모",
+        "가족"
+      ],
+      "isPublic": true,
+      "inviteCode": "READ-EP-MOM",
+      "leaderId": "u-leader",
+      "leaderName": "오하린",
+      "currentWeek": 2,
+      "season": 1,
+      "createdAt": "2026-07-02T09:00:00.000Z",
+      "region": "서울"
+    }
+  ],
+  "members": [
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-leader",
+      "role": "leader",
+      "crewId": null,
+      "joinedAt": "2026-06-18T09:00:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-01",
+      "role": "crewLead",
+      "crewId": "c-43",
+      "joinedAt": "2026-06-19T09:00:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-02",
+      "role": "member",
+      "crewId": "c-43",
+      "joinedAt": "2026-06-19T09:10:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-03",
+      "role": "member",
+      "crewId": "c-43",
+      "joinedAt": "2026-06-19T09:20:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-04",
+      "role": "member",
+      "crewId": "c-43",
+      "joinedAt": "2026-06-19T09:30:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-05",
+      "role": "member",
+      "crewId": "c-43",
+      "joinedAt": "2026-06-19T09:40:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-06",
+      "role": "member",
+      "crewId": "c-43",
+      "joinedAt": "2026-06-19T09:50:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-07",
+      "role": "crewLead",
+      "crewId": "c-33",
+      "joinedAt": "2026-06-19T10:00:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-08",
+      "role": "member",
+      "crewId": "c-33",
+      "joinedAt": "2026-06-19T10:10:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-09",
+      "role": "member",
+      "crewId": "c-33",
+      "joinedAt": "2026-06-19T10:20:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-10",
+      "role": "crewLead",
+      "crewId": "c-26",
+      "joinedAt": "2026-06-19T10:30:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-11",
+      "role": "member",
+      "crewId": "c-26",
+      "joinedAt": "2026-06-19T10:40:00.000Z"
+    },
+    {
+      "groupId": "g-hanbit",
+      "userId": "u-12",
+      "role": "member",
+      "crewId": "c-41",
+      "joinedAt": "2026-06-19T10:50:00.000Z"
+    }
+  ],
+  "crews": [
+    {
+      "id": "c-43",
+      "groupId": "g-hanbit",
+      "interestId": 43,
+      "name": "#43 기술과 인간 크루",
+      "leadUserId": "u-01",
+      "memberIds": [
+        "u-01",
+        "u-02",
+        "u-03",
+        "u-04",
+        "u-05",
+        "u-06"
+      ],
+      "cells": [
+        {
+          "name": "셀 A",
+          "memberIds": [
+            "u-01",
+            "u-02",
+            "u-03"
+          ]
+        },
+        {
+          "name": "셀 B",
+          "memberIds": [
+            "u-04",
+            "u-05",
+            "u-06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c-33",
+      "groupId": "g-hanbit",
+      "interestId": 33,
+      "name": "#33 교육과 학습 크루",
+      "leadUserId": "u-07",
+      "memberIds": [
+        "u-07",
+        "u-08",
+        "u-09"
+      ],
+      "cells": [
+        {
+          "name": "셀 A",
+          "memberIds": [
+            "u-07",
+            "u-08",
+            "u-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c-26",
+      "groupId": "g-hanbit",
+      "interestId": 26,
+      "name": "#26 번아웃과 무기력 크루",
+      "leadUserId": "u-10",
+      "memberIds": [
+        "u-10",
+        "u-11"
+      ],
+      "cells": [
+        {
+          "name": "셀 A",
+          "memberIds": [
+            "u-10",
+            "u-11"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c-41",
+      "groupId": "g-hanbit",
+      "interestId": 41,
+      "name": "#41 정의와 공정 크루",
+      "leadUserId": "u-12",
+      "memberIds": [
+        "u-12"
+      ],
+      "cells": [
+        {
+          "name": "셀 A",
+          "memberIds": [
+            "u-12"
+          ]
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-01",
+      "userId": "u-01",
+      "userName": "김민준",
+      "userAvatar": "🧑",
+      "groupId": "g-hanbit",
+      "crewId": "c-43",
+      "interestId": 43,
+      "title": "AI가 교사를 대체할 수 있는가?",
+      "moment": "챗GPT로 숙제를 하는 친구를 보면서 선생님의 역할이 뭔지 의문이 들었다. 답을 알려주는 게 전부라면 이미 대체된 것 아닌가 싶었다.",
+      "bookTitle": "에듀테크의 미래",
+      "bookQuestion": "기술이 교육을 바꾸는 것인가, 교육이 기술을 선택하는 것인가?",
+      "opponent": "에듀테크 회사 개발자",
+      "opponentLogic": "AI는 교사를 돕는 도구일 뿐, 대체가 목적이 아니다. 오히려 교사가 더 중요한 일에 집중하게 해준다.",
+      "why": "지금 결정하지 않으면 10년 뒤 교육이 어떻게 될지 아무도 모르기 때문이다.",
+      "visibility": "public",
+      "createdAt": "2026-07-03T14:00:00.000Z",
+      "isHighlighted": true,
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-02",
+      "userId": "u-03",
+      "userName": "이수아",
+      "userAvatar": "👧",
+      "groupId": "g-hanbit",
+      "crewId": "c-43",
+      "interestId": 43,
+      "title": "추천 알고리즘은 내 취향을 만드는가 반영하는가?",
+      "moment": "유튜브 홈이 어느 순간 내가 좋아하는 것만 가득해졌다. 그런데 그게 원래 내 취향이었는지 알고리즘이 만든 건지 헷갈렸다.",
+      "bookTitle": "클릭하지 않습니다",
+      "bookQuestion": "내 취향은 정말 내가 고른 것인가?",
+      "opponent": "플랫폼 기획자",
+      "opponentLogic": "알고리즘은 사용자가 선택한 데이터를 반영할 뿐이다. 취향은 원래 있었고 우리는 찾아줄 뿐이다.",
+      "why": "무엇을 좋아하는지가 내가 누구인지를 결정하는데, 그것을 기계가 정한다면 나는 누구인지 모르게 된다.",
+      "visibility": "public",
+      "createdAt": "2026-07-03T15:30:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-03",
+      "userId": "u-07",
+      "userName": "윤지아",
+      "userAvatar": "👩‍🦰",
+      "groupId": "g-hanbit",
+      "crewId": "c-33",
+      "interestId": 33,
+      "title": "학교는 왜 행복을 가르치지 않는가?",
+      "moment": "행복이 인생에서 제일 중요하다고 다들 말하는데, 시간표에는 행복이라는 과목이 없다는 걸 깨달았다.",
+      "bookTitle": "행복의 기원",
+      "bookQuestion": "행복은 목표인가 부산물인가?",
+      "opponent": "교육과정 담당자",
+      "opponentLogic": "행복은 가르칠 수 있는 지식이 아니다. 교과를 잘 배우는 과정에서 자연히 따라오는 것이다.",
+      "why": "12년 동안 배운 것이 삶을 잘 사는 데 도움이 안 된다면 그 시간은 무엇이었는지 물어야 한다.",
+      "visibility": "public",
+      "createdAt": "2026-07-04T10:00:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-04",
+      "userId": "u-10",
+      "userName": "오재호",
+      "userAvatar": "👦🏻",
+      "groupId": "g-hanbit",
+      "crewId": "c-26",
+      "interestId": 26,
+      "title": "왜 쉬어도 피곤한가?",
+      "moment": "주말 내내 잤는데 월요일 아침에 더 무거웠다. 쉬었는데 왜 회복이 안 되는지 이상했다.",
+      "bookTitle": "쉬어도 피곤한 사람들",
+      "bookQuestion": "쉼은 왜 회복이 되지 않는가?",
+      "opponent": "생활 습관 전문가",
+      "opponentLogic": "제대로 쉬지 않았기 때문이다. 스마트폰을 보며 누워 있는 것은 휴식이 아니다.",
+      "why": "회복하지 못한 채 계속 달리면 결국 아무것도 하지 못하게 되기 때문이다.",
+      "visibility": "public",
+      "createdAt": "2026-07-04T16:20:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-05",
+      "userId": "u-12",
+      "userName": "신태오",
+      "userAvatar": "🧑🏻",
+      "groupId": "g-hanbit",
+      "crewId": "c-41",
+      "interestId": 41,
+      "title": "같은 시험이면 공정한 것인가?",
+      "moment": "학원에 다니는 친구와 나는 같은 문제를 풀었는데, 시작한 지점이 완전히 달랐다는 걸 알게 됐다.",
+      "bookTitle": "공정하다는 착각의 뒷면",
+      "bookQuestion": "출발선이 다를 때 같은 규칙은 공정한가?",
+      "opponent": "성적 우수 학생",
+      "opponentLogic": "같은 문제를 같은 시간에 푸는 것보다 더 공정한 방법이 있는가? 노력한 만큼 받는 것이다.",
+      "why": "공정하다고 믿는 것이 사실은 불평등을 정당화하는 언어일 수 있기 때문이다.",
+      "visibility": "public",
+      "createdAt": "2026-07-05T11:00:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-06",
+      "userId": "u-02",
+      "userName": "박서준",
+      "userAvatar": "👦",
+      "groupId": "g-hanbit",
+      "crewId": "c-43",
+      "interestId": 43,
+      "title": "온라인 수업은 왜 집중이 안 되는가?",
+      "moment": "같은 선생님, 같은 내용인데 화면으로 보면 10분도 못 버텼다. 교실에서는 되던 게 왜 안 될까 생각했다.",
+      "bookTitle": "에듀테크의 미래",
+      "bookQuestion": "기술이 바뀌면 배움도 바뀌는가?",
+      "opponent": "온라인 교육 옹호자",
+      "opponentLogic": "집중력 문제는 개인차다. 오히려 반복 시청이 가능해 학습 효과가 더 좋다.",
+      "why": "앞으로 온라인 수업이 더 늘어날 텐데 왜 안 되는지 모른 채로 늘리면 손해는 학생이 본다.",
+      "visibility": "group",
+      "createdAt": "2026-07-06T09:00:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-07",
+      "userId": "u-05",
+      "userName": "최윤서",
+      "userAvatar": "👩",
+      "groupId": "g-hanbit",
+      "crewId": "c-43",
+      "interestId": 46,
+      "title": "AI가 쓴 글도 글쓴이가 있는가?",
+      "moment": "친구가 AI로 쓴 독후감을 냈는데 선생님이 칭찬했다. 그 칭찬은 누구에게 간 걸까 싶었다.",
+      "bookTitle": "생각한다는 착각",
+      "bookQuestion": "AI는 정말 생각하는가?",
+      "opponent": "AI 활용 찬성론자",
+      "opponentLogic": "도구를 잘 쓰는 것도 능력이다. 계산기를 썼다고 수학을 못 하는 건 아니다.",
+      "why": "무엇을 내가 한 것으로 볼지 정하지 않으면 평가 자체가 의미를 잃는다.",
+      "visibility": "public",
+      "createdAt": "2026-07-07T13:00:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    },
+    {
+      "id": "card-08",
+      "userId": "u-08",
+      "userName": "임세현",
+      "userAvatar": "🧑‍🦰",
+      "groupId": "g-hanbit",
+      "crewId": "c-33",
+      "interestId": 30,
+      "title": "우리는 왜 잘 시간이 없는가?",
+      "moment": "밤 12시에 학원에서 나오면서, 이게 정상인가 하는 생각이 처음 들었다.",
+      "bookTitle": "잠들지 못하는 세대",
+      "bookQuestion": "등교 시간은 왜 그대로인가?",
+      "opponent": "학부모",
+      "opponentLogic": "지금 조금 힘든 게 나중을 위한 투자다. 다들 그렇게 견뎌왔다.",
+      "why": "잠이 부족하면 배운 것도 남지 않는데, 배우려고 잠을 줄이는 건 앞뒤가 안 맞는다.",
+      "visibility": "public",
+      "createdAt": "2026-07-08T20:00:00.000Z",
+      "schoolLabel": "중2",
+      "region": "서울"
+    }
+  ],
+  "reactions": [
+    {
+      "id": "r-01",
+      "cardId": "card-01",
+      "userId": "u-03",
+      "userName": "이수아",
+      "userAvatar": "👧",
+      "type": "rebut",
+      "comment": "'대체'라는 전제가 문제인 것 같아요. 교사의 역할을 '지식 전달'로만 보면 대체 가능하지만, '관계'로 보면 불가능하잖아요. 그럼 질문은 '무엇이 대체되는가'가 아닐까요?",
+      "createdAt": "2026-07-03T18:00:00.000Z"
+    },
+    {
+      "id": "r-02",
+      "cardId": "card-01",
+      "userId": "u-04",
+      "userName": "정하늘",
+      "userAvatar": "🧒",
+      "type": "symptom",
+      "comment": "'대체'보다 '역할 변화'가 진짜 문제 아닐까요? 대체는 결과고 변화가 과정인 것 같아요.",
+      "createdAt": "2026-07-03T19:00:00.000Z"
+    },
+    {
+      "id": "r-03",
+      "cardId": "card-01",
+      "userId": "u-05",
+      "userName": "최윤서",
+      "userAvatar": "👩",
+      "type": "agree",
+      "comment": "저도 똑같은 생각 했어요. 특히 국어 수업에서 그런 느낌을 자주 받았어요.",
+      "createdAt": "2026-07-04T09:00:00.000Z"
+    },
+    {
+      "id": "r-04",
+      "cardId": "card-01",
+      "userId": "u-06",
+      "userName": "강도윤",
+      "userAvatar": "🧑‍🦱",
+      "type": "rebut",
+      "comment": "학원 강사는 이미 인강으로 많이 대체됐는데 학교 선생님은 안 그렇잖아요. 그 차이가 뭔지가 진짜 질문 같아요.",
+      "createdAt": "2026-07-04T11:00:00.000Z"
+    },
+    {
+      "id": "r-05",
+      "cardId": "card-02",
+      "userId": "u-01",
+      "userName": "김민준",
+      "userAvatar": "🧑",
+      "type": "symptom",
+      "comment": "취향이 만들어지는지 반영되는지는 사실 둘 다일 수도 있어요. 어느 쪽이 더 센지를 물어야 할 것 같아요.",
+      "createdAt": "2026-07-04T10:00:00.000Z"
+    },
+    {
+      "id": "r-06",
+      "cardId": "card-02",
+      "userId": "u-02",
+      "userName": "박서준",
+      "userAvatar": "👦",
+      "type": "agree",
+      "comment": "저도 쇼츠 보다가 세 시간이 지난 적이 있어요. 그때 내가 고른 게 맞나 싶었어요.",
+      "createdAt": "2026-07-04T12:00:00.000Z"
+    },
+    {
+      "id": "r-07",
+      "cardId": "card-03",
+      "userId": "u-08",
+      "userName": "임세현",
+      "userAvatar": "🧑‍🦰",
+      "type": "rebut",
+      "comment": "행복을 과목으로 만들면 그것도 시험을 보게 될 텐데, 그럼 더 불행해지지 않을까요? 가르치는 방식 자체를 물어야 할 것 같아요.",
+      "createdAt": "2026-07-04T14:00:00.000Z"
+    },
+    {
+      "id": "r-08",
+      "cardId": "card-03",
+      "userId": "u-09",
+      "userName": "한소율",
+      "userAvatar": "👧🏻",
+      "type": "agree",
+      "comment": "학교에서 배운 것 중에 지금 마음이 힘들 때 도움이 되는 게 하나도 없다는 게 이상했어요.",
+      "createdAt": "2026-07-05T09:00:00.000Z"
+    },
+    {
+      "id": "r-09",
+      "cardId": "card-04",
+      "userId": "u-11",
+      "userName": "배유진",
+      "userAvatar": "👩🏻",
+      "type": "rebut",
+      "comment": "방학에도 피곤한 사람은 어떻게 설명하나요? 시간이 없어서가 아니라 다른 이유가 있는 것 같아요.",
+      "createdAt": "2026-07-05T10:00:00.000Z"
+    },
+    {
+      "id": "r-10",
+      "cardId": "card-04",
+      "userId": "u-01",
+      "userName": "김민준",
+      "userAvatar": "🧑",
+      "type": "agree",
+      "comment": "저도 그래요. 자고 일어나도 개운한 적이 거의 없어서 이게 왜 그런지 궁금했어요.",
+      "createdAt": "2026-07-05T13:00:00.000Z"
+    },
+    {
+      "id": "r-11",
+      "cardId": "card-05",
+      "userId": "u-03",
+      "userName": "이수아",
+      "userAvatar": "👧",
+      "type": "symptom",
+      "comment": "시험이 문제가 아니라 시험 밖에서 벌어지는 일이 문제인 것 같아요. 시험은 결과만 보여주는 거고요.",
+      "createdAt": "2026-07-06T10:00:00.000Z"
+    },
+    {
+      "id": "r-12",
+      "cardId": "card-08",
+      "userId": "u-07",
+      "userName": "윤지아",
+      "userAvatar": "👩‍🦰",
+      "type": "rebut",
+      "comment": "학원을 안 다니는 학생도 늦게 자는 경우가 많아요. 그럼 학원 때문만은 아니라는 뜻 아닐까요?",
+      "createdAt": "2026-07-09T09:00:00.000Z"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "s-01",
+      "groupId": "g-hanbit",
+      "userId": "u-01",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T10:00:00.000Z"
+    },
+    {
+      "id": "s-02",
+      "groupId": "g-hanbit",
+      "userId": "u-01",
+      "week": 2,
+      "content": "《에듀테크의 미래》 선택",
+      "submittedAt": "2026-06-27T10:00:00.000Z"
+    },
+    {
+      "id": "s-03",
+      "groupId": "g-hanbit",
+      "userId": "u-01",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-03T14:00:00.000Z"
+    },
+    {
+      "id": "s-04",
+      "groupId": "g-hanbit",
+      "userId": "u-01",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-10T14:00:00.000Z"
+    },
+    {
+      "id": "s-05",
+      "groupId": "g-hanbit",
+      "userId": "u-03",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T11:00:00.000Z"
+    },
+    {
+      "id": "s-06",
+      "groupId": "g-hanbit",
+      "userId": "u-03",
+      "week": 2,
+      "content": "《클릭하지 않습니다》 선택",
+      "submittedAt": "2026-06-27T11:00:00.000Z"
+    },
+    {
+      "id": "s-07",
+      "groupId": "g-hanbit",
+      "userId": "u-03",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-03T15:30:00.000Z"
+    },
+    {
+      "id": "s-08",
+      "groupId": "g-hanbit",
+      "userId": "u-03",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-10T15:00:00.000Z"
+    },
+    {
+      "id": "s-10",
+      "groupId": "g-hanbit",
+      "userId": "u-04",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T12:00:00.000Z"
+    },
+    {
+      "id": "s-11",
+      "groupId": "g-hanbit",
+      "userId": "u-04",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-27T12:00:00.000Z"
+    },
+    {
+      "id": "s-12",
+      "groupId": "g-hanbit",
+      "userId": "u-04",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-03T16:00:00.000Z"
+    },
+    {
+      "id": "s-13",
+      "groupId": "g-hanbit",
+      "userId": "u-04",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-10T16:00:00.000Z"
+    },
+    {
+      "id": "s-15",
+      "groupId": "g-hanbit",
+      "userId": "u-05",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T13:00:00.000Z"
+    },
+    {
+      "id": "s-16",
+      "groupId": "g-hanbit",
+      "userId": "u-05",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-27T13:00:00.000Z"
+    },
+    {
+      "id": "s-17",
+      "groupId": "g-hanbit",
+      "userId": "u-05",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-07T13:00:00.000Z"
+    },
+    {
+      "id": "s-18",
+      "groupId": "g-hanbit",
+      "userId": "u-05",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-10T17:00:00.000Z"
+    },
+    {
+      "id": "s-20",
+      "groupId": "g-hanbit",
+      "userId": "u-07",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T14:00:00.000Z"
+    },
+    {
+      "id": "s-21",
+      "groupId": "g-hanbit",
+      "userId": "u-07",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-27T14:00:00.000Z"
+    },
+    {
+      "id": "s-22",
+      "groupId": "g-hanbit",
+      "userId": "u-07",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-04T10:00:00.000Z"
+    },
+    {
+      "id": "s-23",
+      "groupId": "g-hanbit",
+      "userId": "u-07",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-11T10:00:00.000Z"
+    },
+    {
+      "id": "s-25",
+      "groupId": "g-hanbit",
+      "userId": "u-10",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T15:00:00.000Z"
+    },
+    {
+      "id": "s-26",
+      "groupId": "g-hanbit",
+      "userId": "u-10",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-27T15:00:00.000Z"
+    },
+    {
+      "id": "s-27",
+      "groupId": "g-hanbit",
+      "userId": "u-10",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-04T16:20:00.000Z"
+    },
+    {
+      "id": "s-28",
+      "groupId": "g-hanbit",
+      "userId": "u-10",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-11T16:00:00.000Z"
+    },
+    {
+      "id": "s-30",
+      "groupId": "g-hanbit",
+      "userId": "u-11",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T16:00:00.000Z"
+    },
+    {
+      "id": "s-31",
+      "groupId": "g-hanbit",
+      "userId": "u-11",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-27T16:00:00.000Z"
+    },
+    {
+      "id": "s-32",
+      "groupId": "g-hanbit",
+      "userId": "u-11",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-04T17:00:00.000Z"
+    },
+    {
+      "id": "s-33",
+      "groupId": "g-hanbit",
+      "userId": "u-11",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-11T17:00:00.000Z"
+    },
+    {
+      "id": "s-35",
+      "groupId": "g-hanbit",
+      "userId": "u-02",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-20T17:00:00.000Z"
+    },
+    {
+      "id": "s-36",
+      "groupId": "g-hanbit",
+      "userId": "u-02",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-27T17:00:00.000Z"
+    },
+    {
+      "id": "s-37",
+      "groupId": "g-hanbit",
+      "userId": "u-02",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-06T09:00:00.000Z"
+    },
+    {
+      "id": "s-38",
+      "groupId": "g-hanbit",
+      "userId": "u-02",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-13T09:00:00.000Z"
+    },
+    {
+      "id": "s-39",
+      "groupId": "g-hanbit",
+      "userId": "u-06",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-21T09:00:00.000Z"
+    },
+    {
+      "id": "s-40",
+      "groupId": "g-hanbit",
+      "userId": "u-06",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-28T09:00:00.000Z"
+    },
+    {
+      "id": "s-41",
+      "groupId": "g-hanbit",
+      "userId": "u-06",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-05T09:00:00.000Z"
+    },
+    {
+      "id": "s-42",
+      "groupId": "g-hanbit",
+      "userId": "u-08",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-21T10:00:00.000Z"
+    },
+    {
+      "id": "s-43",
+      "groupId": "g-hanbit",
+      "userId": "u-08",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-28T10:00:00.000Z"
+    },
+    {
+      "id": "s-44",
+      "groupId": "g-hanbit",
+      "userId": "u-08",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-08T20:00:00.000Z"
+    },
+    {
+      "id": "s-45",
+      "groupId": "g-hanbit",
+      "userId": "u-08",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-15T10:00:00.000Z"
+    },
+    {
+      "id": "s-47",
+      "groupId": "g-hanbit",
+      "userId": "u-09",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-21T11:00:00.000Z"
+    },
+    {
+      "id": "s-48",
+      "groupId": "g-hanbit",
+      "userId": "u-09",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-28T11:00:00.000Z"
+    },
+    {
+      "id": "s-49",
+      "groupId": "g-hanbit",
+      "userId": "u-12",
+      "week": 1,
+      "content": "관심사 진단 완료",
+      "submittedAt": "2026-06-21T12:00:00.000Z"
+    },
+    {
+      "id": "s-50",
+      "groupId": "g-hanbit",
+      "userId": "u-12",
+      "week": 2,
+      "content": "책 선택 완료",
+      "submittedAt": "2026-06-28T12:00:00.000Z"
+    },
+    {
+      "id": "s-51",
+      "groupId": "g-hanbit",
+      "userId": "u-12",
+      "week": 3,
+      "content": "문제 카드 게시",
+      "submittedAt": "2026-07-05T11:00:00.000Z"
+    },
+    {
+      "id": "s-52",
+      "groupId": "g-hanbit",
+      "userId": "u-12",
+      "week": 4,
+      "content": "숨은 전제 코멘트 완료",
+      "submittedAt": "2026-07-12T11:00:00.000Z"
+    }
+  ],
+  "publicCards": [
+    {
+      "id": "pc-01",
+      "title": "공정한 입시는 존재하는가?",
+      "interestId": 41,
+      "userName": "서지호",
+      "userAvatar": "🧑",
+      "bookTitle": "공정하다는 착각의 뒷면",
+      "agree": 118,
+      "symptom": 63,
+      "rebut": 87,
+      "schoolLabel": "고1",
+      "region": "부산",
+      "hasDefinition": true,
+      "hasProject": false
+    },
+    {
+      "id": "pc-02",
+      "title": "기후변화에 학생이 할 수 있는 것은?",
+      "interestId": 42,
+      "userName": "노하은",
+      "userAvatar": "👧",
+      "bookTitle": "기후를 말하는 사람들",
+      "agree": 96,
+      "symptom": 41,
+      "rebut": 52,
+      "schoolLabel": "중3",
+      "region": "대전",
+      "hasDefinition": true,
+      "hasProject": true
+    },
+    {
+      "id": "pc-03",
+      "title": "고교생 번아웃은 선택 부재에서 온다",
+      "interestId": 26,
+      "userName": "최민아",
+      "userAvatar": "👩",
+      "bookTitle": "쉬어도 피곤한 사람들",
+      "agree": 96,
+      "symptom": 33,
+      "rebut": 71,
+      "schoolLabel": "고2",
+      "region": "대전",
+      "hasDefinition": true,
+      "hasProject": true
+    },
+    {
+      "id": "pc-04",
+      "title": "학생 자치는 왜 형식적인가?",
+      "interestId": 39,
+      "userName": "권시우",
+      "userAvatar": "👦",
+      "bookTitle": "교실 밖의 민주주의",
+      "agree": 74,
+      "symptom": 38,
+      "rebut": 45,
+      "schoolLabel": "고1",
+      "region": "인천",
+      "hasDefinition": true,
+      "hasProject": false
+    },
+    {
+      "id": "pc-05",
+      "title": "청소년이 갈 수 있는 공간은 어디인가?",
+      "interestId": 44,
+      "userName": "장예린",
+      "userAvatar": "👧🏻",
+      "bookTitle": "도시는 누구의 것인가",
+      "agree": 68,
+      "symptom": 29,
+      "rebut": 34,
+      "schoolLabel": "중2",
+      "region": "광주",
+      "hasDefinition": false,
+      "hasProject": false
+    },
+    {
+      "id": "pc-06",
+      "title": "왜 우리는 잘 시간이 없는가?",
+      "interestId": 30,
+      "userName": "임세현",
+      "userAvatar": "🧑‍🦰",
+      "bookTitle": "잠들지 못하는 세대",
+      "agree": 88,
+      "symptom": 44,
+      "rebut": 39,
+      "schoolLabel": "중2",
+      "region": "서울",
+      "hasDefinition": false,
+      "hasProject": false
+    },
+    {
+      "id": "pc-07",
+      "title": "가짜뉴스는 왜 더 빨리 퍼지는가?",
+      "interestId": 40,
+      "userName": "홍주원",
+      "userAvatar": "🧑🏻",
+      "bookTitle": "믿을 수 없는 뉴스",
+      "agree": 57,
+      "symptom": 36,
+      "rebut": 42,
+      "schoolLabel": "고2",
+      "region": "대구",
+      "hasDefinition": true,
+      "hasProject": false
+    },
+    {
+      "id": "pc-08",
+      "title": "외모 평가는 왜 사라지지 않는가?",
+      "interestId": 28,
+      "userName": "송하윤",
+      "userAvatar": "👩🏻",
+      "bookTitle": "몸이라는 이름의 감옥",
+      "agree": 92,
+      "symptom": 51,
+      "rebut": 28,
+      "schoolLabel": "고1",
+      "region": "경기",
+      "hasDefinition": false,
+      "hasProject": false
+    },
+    {
+      "id": "pc-09",
+      "title": "허구를 읽는 것은 쓸모 있는가?",
+      "interestId": 49,
+      "userName": "유건우",
+      "userAvatar": "👦🏻",
+      "bookTitle": "이야기의 쓸모",
+      "agree": 45,
+      "symptom": 22,
+      "rebut": 51,
+      "schoolLabel": "중3",
+      "region": "울산",
+      "hasDefinition": true,
+      "hasProject": false
+    },
+    {
+      "id": "pc-10",
+      "title": "혼자 있는 것과 외로운 것은 어떻게 다른가?",
+      "interestId": 5,
+      "userName": "백서윤",
+      "userAvatar": "👧",
+      "bookTitle": "혼자 있는 시간의 힘",
+      "agree": 81,
+      "symptom": 34,
+      "rebut": 26,
+      "schoolLabel": "중2",
+      "region": "세종",
+      "hasDefinition": false,
+      "hasProject": false
+    },
+    {
+      "id": "pc-11",
+      "title": "AI가 쓴 글도 글쓴이가 있는가?",
+      "interestId": 46,
+      "userName": "최윤서",
+      "userAvatar": "👩",
+      "bookTitle": "생각한다는 착각",
+      "agree": 63,
+      "symptom": 27,
+      "rebut": 58,
+      "schoolLabel": "중2",
+      "region": "서울",
+      "hasDefinition": false,
+      "hasProject": false
+    },
+    {
+      "id": "pc-12",
+      "title": "노력의 결과는 온전히 내 것인가?",
+      "interestId": 3,
+      "userName": "문도현",
+      "userAvatar": "🧑‍🦱",
+      "bookTitle": "공정하다는 착각의 뒷면",
+      "agree": 71,
+      "symptom": 30,
+      "rebut": 64,
+      "schoolLabel": "고3",
+      "region": "부산",
+      "hasDefinition": true,
+      "hasProject": true
+    }
+  ],
+  "legacyQuestions": [
+    {
+      "id": "lq-01",
+      "text": "대안학교 졸업생의 진로 추적이 왜 없는가?",
+      "from": "서초 지부 · 시즌 3",
+      "interestId": 33
+    },
+    {
+      "id": "lq-02",
+      "text": "청소년 정치 참여의 실질적 통로는 무엇인가?",
+      "from": "분당 지부 · 시즌 2",
+      "interestId": 39
+    },
+    {
+      "id": "lq-03",
+      "text": "학교 급식 잔반은 왜 줄지 않는가?",
+      "from": "한빛중 · 시즌 1",
+      "interestId": 42
+    }
+  ]
+}

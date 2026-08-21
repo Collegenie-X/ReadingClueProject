@@ -1,0 +1,321 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "요즘 뉴스에서 가장 오래 눈이 머무는 주제는?",
+      "options": [
+        { "label": "AI·기술이 사회를 바꾸는 이야기", "interests": [43, 46] },
+        { "label": "교육 제도와 입시 이야기", "interests": [33, 37] },
+        { "label": "기후·환경 이야기", "interests": [42, 50] },
+        { "label": "사람들의 마음과 관계 이야기", "interests": [21, 13] },
+        { "label": "딱히 없다 / 잘 모르겠다", "interests": [1, 7] }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "혼자 있는 시간에 주로 드는 생각은?",
+      "options": [
+        { "label": "나는 어떤 사람일까", "interests": [1, 6] },
+        { "label": "왜 이렇게 피곤할까", "interests": [26, 30] },
+        { "label": "그 사람은 왜 그렇게 말했을까", "interests": [13, 14] },
+        { "label": "앞으로 뭘 하며 살까", "interests": [7, 34] },
+        { "label": "그냥 아무 생각 안 한다", "interests": [27, 24] }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "친구가 부당한 일을 당했다. 가장 먼저 드는 감정은?",
+      "options": [
+        { "label": "화가 난다 — 왜 이런 일이 반복되지", "interests": [41, 20] },
+        { "label": "안타깝다 — 어떻게 도와줄까", "interests": [11, 14] },
+        { "label": "규칙 자체가 잘못됐다고 생각한다", "interests": [38, 39] },
+        { "label": "나에게도 일어날까 불안하다", "interests": [19, 37] },
+        { "label": "잘 모르겠다", "interests": [1] }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "책을 고를 때 가장 끌리는 표지 문구는?",
+      "options": [
+        { "label": "\"당신은 왜 그렇게 느끼는가\"", "interests": [21, 19] },
+        { "label": "\"세상은 왜 이렇게 되었는가\"", "interests": [38, 37] },
+        { "label": "\"10년 뒤 우리는 어떻게 살까\"", "interests": [50, 43] },
+        { "label": "\"관계가 어려운 당신에게\"", "interests": [13, 11] },
+        { "label": "\"오늘 하루를 잘 보내는 법\"", "interests": [27, 4] }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "스마트폰을 손에서 놓기 어려울 때, 무슨 생각이 드나?",
+      "options": [
+        { "label": "이건 중독인가 싶다", "interests": [24, 4] },
+        { "label": "알고리즘이 나를 조종하는 것 같다", "interests": [43, 40] },
+        { "label": "그냥 쉬는 건데 왜 죄책감이 들까", "interests": [27, 26] },
+        { "label": "온라인 친구도 진짜 친구일까", "interests": [16, 11] },
+        { "label": "별생각 없다", "interests": [35] }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "학교(직장)에서 가장 답답한 순간은?",
+      "options": [
+        { "label": "왜 이걸 배우는지 아무도 말해주지 않을 때", "interests": [33, 34] },
+        { "label": "내 의견이 반영되지 않을 때", "interests": [39, 17] },
+        { "label": "노력해도 결과가 안 바뀔 때", "interests": [3, 8] },
+        { "label": "다 같이 지쳐 있는 게 보일 때", "interests": [26, 30] },
+        { "label": "특별히 답답하지 않다", "interests": [23] }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "'공정하다'는 말을 들으면 떠오르는 장면은?",
+      "options": [
+        { "label": "시험 성적표", "interests": [41, 33] },
+        { "label": "출발선이 다른 달리기", "interests": [37, 41] },
+        { "label": "누군가의 선택을 존중하는 모습", "interests": [2, 39] },
+        { "label": "잘 떠오르지 않는다", "interests": [1] }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "가장 자주 미루는 일은?",
+      "options": [
+        { "label": "잠자기 · 쉬기", "interests": [30, 27] },
+        { "label": "해야 하는 공부·일", "interests": [4, 25] },
+        { "label": "누군가에게 연락하기", "interests": [13, 5] },
+        { "label": "운동·건강 관리", "interests": [28, 31] },
+        { "label": "미루는 편이 아니다", "interests": [4] }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "SNS에서 남의 소식을 볼 때 드는 감정은?",
+      "options": [
+        { "label": "비교하게 되고 위축된다", "interests": [6, 16] },
+        { "label": "저건 편집된 모습이라고 생각한다", "interests": [40, 16] },
+        { "label": "반갑고 응원하게 된다", "interests": [11, 12] },
+        { "label": "무덤덤하다", "interests": [35] }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "가족과의 관계를 한 단어로 표현하면?",
+      "options": [
+        { "label": "가깝지만 어렵다", "interests": [10, 14] },
+        { "label": "고맙지만 부담된다", "interests": [10, 7] },
+        { "label": "서로 다른 세대라 대화가 안 된다", "interests": [18, 13] },
+        { "label": "편안하다", "interests": [10, 23] }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "돈에 대해 가장 자주 하는 생각은?",
+      "options": [
+        { "label": "왜 누구는 많고 누구는 적을까", "interests": [37, 32] },
+        { "label": "사는 게 곧 나를 보여주는 것 같다", "interests": [32, 35] },
+        { "label": "돈 걱정 없이 살고 싶다", "interests": [32, 19] },
+        { "label": "별로 생각 안 한다", "interests": [23] }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "'잘 산다'는 것에 가장 가까운 문장은?",
+      "options": [
+        { "label": "하고 싶은 일을 하며 사는 것", "interests": [7, 34] },
+        { "label": "건강하게 오래 사는 것", "interests": [31, 28] },
+        { "label": "좋은 사람들과 함께 사는 것", "interests": [11, 12] },
+        { "label": "세상을 조금이라도 낫게 하는 것", "interests": [44, 41] },
+        { "label": "마음이 편한 것", "interests": [23, 27] }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "새로운 기술(AI 등)에 대한 첫 반응은?",
+      "options": [
+        { "label": "신기하고 빨리 써보고 싶다", "interests": [46, 50] },
+        { "label": "이게 사람을 어떻게 바꿀지 궁금하다", "interests": [43, 48] },
+        { "label": "일자리가 걱정된다", "interests": [34, 19] },
+        { "label": "윤리적으로 괜찮은 걸까", "interests": [48, 41] },
+        { "label": "관심 없다", "interests": [35] }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "가장 최근에 눈물이 났던 이유는?",
+      "options": [
+        { "label": "억울하거나 화가 나서", "interests": [20, 41] },
+        { "label": "누군가와 헤어져서", "interests": [22, 12] },
+        { "label": "너무 지쳐서", "interests": [26, 19] },
+        { "label": "감동적인 이야기를 봐서", "interests": [49, 22] },
+        { "label": "기억나지 않는다", "interests": [21] }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "친구들과 있을 때 나는?",
+      "options": [
+        { "label": "주로 이야기를 이끄는 편", "interests": [17, 13] },
+        { "label": "주로 듣는 편", "interests": [13, 5] },
+        { "label": "분위기를 맞추려 애쓰는 편", "interests": [11, 6] },
+        { "label": "혼자 있는 게 더 편할 때가 많다", "interests": [5, 1] }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "환경 문제에 대해 어떻게 느끼나?",
+      "options": [
+        { "label": "심각한데 내가 할 수 있는 게 없어 답답하다", "interests": [42, 39] },
+        { "label": "다음 세대에게 미안하다", "interests": [42, 50] },
+        { "label": "기술이 해결해 줄 것 같다", "interests": [43, 46] },
+        { "label": "과장된 면도 있다고 생각한다", "interests": [40, 42] },
+        { "label": "잘 모르겠다", "interests": [1] }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "실패했을 때 나는?",
+      "options": [
+        { "label": "오래 곱씹는다", "interests": [8, 25] },
+        { "label": "빨리 잊으려 한다", "interests": [8, 21] },
+        { "label": "다른 사람 탓을 하게 된다", "interests": [20, 14] },
+        { "label": "다음엔 어떻게 할지 계획한다", "interests": [3, 4] }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "'배운다'는 말에서 떠오르는 이미지는?",
+      "options": [
+        { "label": "교실과 시험", "interests": [33, 41] },
+        { "label": "궁금해서 찾아본 순간", "interests": [33, 49] },
+        { "label": "누군가에게 배운 태도", "interests": [17, 18] },
+        { "label": "실패하고 다시 해본 경험", "interests": [8, 3] }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "어떤 이야기(소설·영화)에 가장 끌리나?",
+      "options": [
+        { "label": "미래·SF 이야기", "interests": [50, 47] },
+        { "label": "사람의 마음을 파고드는 이야기", "interests": [21, 22] },
+        { "label": "사회의 부조리를 다룬 이야기", "interests": [38, 41] },
+        { "label": "따뜻한 일상 이야기", "interests": [23, 10] },
+        { "label": "이야기보다 정보가 좋다", "interests": [40] }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "몸에 대해 가장 자주 하는 생각은?",
+      "options": [
+        { "label": "남들 눈에 어떻게 보일까", "interests": [28, 6] },
+        { "label": "건강이 걱정된다", "interests": [31, 19] },
+        { "label": "잘 먹고 잘 자야 하는데", "interests": [29, 30] },
+        { "label": "별로 신경 안 쓴다", "interests": [27] }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "내가 사는 동네(도시)에 대해 느끼는 것은?",
+      "options": [
+        { "label": "이웃을 잘 모른다", "interests": [44, 5] },
+        { "label": "떠나고 싶다", "interests": [36, 7] },
+        { "label": "여기가 좋다", "interests": [36, 44] },
+        { "label": "생각해 본 적 없다", "interests": [1] }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "뉴스를 볼 때 가장 자주 하는 생각은?",
+      "options": [
+        { "label": "이게 진짜일까", "interests": [40, 38] },
+        { "label": "왜 아무도 해결하지 않을까", "interests": [39, 38] },
+        { "label": "보기가 힘들어 피하게 된다", "interests": [19, 26] },
+        { "label": "재밌게 본다", "interests": [40, 35] }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "누군가 나와 정반대 의견을 말하면?",
+      "options": [
+        { "label": "왜 그렇게 생각하는지 묻고 싶다", "interests": [13, 41] },
+        { "label": "설득하고 싶어진다", "interests": [17, 20] },
+        { "label": "불편해서 말을 아낀다", "interests": [14, 19] },
+        { "label": "그럴 수도 있다고 넘긴다", "interests": [18, 23] }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "가장 부러운 사람은?",
+      "options": [
+        { "label": "자기가 좋아하는 걸 아는 사람", "interests": [7, 35] },
+        { "label": "꾸준히 하는 사람", "interests": [4, 3] },
+        { "label": "마음이 단단한 사람", "interests": [21, 8] },
+        { "label": "사람들과 잘 지내는 사람", "interests": [11, 13] },
+        { "label": "부러운 사람이 딱히 없다", "interests": [1] }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "'미래'라는 단어를 들으면?",
+      "options": [
+        { "label": "설렌다", "interests": [50, 47] },
+        { "label": "막막하다", "interests": [7, 19] },
+        { "label": "지금부터 준비해야 한다고 느낀다", "interests": [34, 4] },
+        { "label": "지금이 더 중요하다고 생각한다", "interests": [23, 27] }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "쉬는 날 가장 하고 싶은 것은?",
+      "options": [
+        { "label": "아무것도 안 하기", "interests": [26, 30] },
+        { "label": "좋아하는 콘텐츠 몰아보기", "interests": [24, 35] },
+        { "label": "사람 만나기", "interests": [11, 12] },
+        { "label": "혼자 걷거나 여행하기", "interests": [5, 36] },
+        { "label": "미뤄둔 일 하기", "interests": [25, 4] }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "생명·의료 기술(유전자 편집 등)에 대해서는?",
+      "options": [
+        { "label": "인류에게 도움이 될 것", "interests": [48, 31] },
+        { "label": "선을 넘는 것 같아 걱정된다", "interests": [48, 41] },
+        { "label": "돈 있는 사람만 쓰게 될 것 같다", "interests": [37, 48] },
+        { "label": "잘 모르겠다", "interests": [1] }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "누군가를 미워해 본 적이 있다면, 그 이유는?",
+      "options": [
+        { "label": "나를 무시해서", "interests": [6, 20] },
+        { "label": "부당한 행동을 해서", "interests": [41, 14] },
+        { "label": "그냥 나와 너무 달라서", "interests": [15, 18] },
+        { "label": "미워한 적 없다", "interests": [23] }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "지금 가장 알고 싶은 것 하나를 고른다면?",
+      "options": [
+        { "label": "내가 뭘 좋아하는지", "interests": [1, 7] },
+        { "label": "어떻게 하면 덜 지칠 수 있는지", "interests": [26, 27] },
+        { "label": "세상이 왜 이렇게 돌아가는지", "interests": [38, 37] },
+        { "label": "사람 마음이 어떻게 움직이는지", "interests": [21, 13] },
+        { "label": "앞으로 세상이 어떻게 변할지", "interests": [50, 43] }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "만약 한 가지 문제를 1년 동안 파고들 수 있다면?",
+      "options": [
+        { "label": "기술이 사람을 바꾸는 방식", "interests": [43, 46] },
+        { "label": "왜 우리는 이렇게 배우는가", "interests": [33, 3] },
+        { "label": "왜 다들 지쳐 있는가", "interests": [26, 30] },
+        { "label": "무엇이 공정한 것인가", "interests": [41, 37] },
+        { "label": "사람은 왜 외로운가", "interests": [5, 12] },
+        { "label": "지구는 앞으로 어떻게 될까", "interests": [42, 50] }
+      ]
+    }
+  ]
+}
